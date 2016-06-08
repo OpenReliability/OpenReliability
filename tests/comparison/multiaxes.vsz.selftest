@@ -1,0 +1,238 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="708.6px" height="531.4px" version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+<desc>Veusz output document</desc>
+<defs>
+<clipPath id="c0">
+<path d="m0,0l708.6,0l0,531.4l-708.6,0l0,-531.4"/>
+</clipPath>
+<clipPath id="c1">
+<path d="m77.7,401.2l35.4,0l0,17.5l-35.4,0l0,-17.5"/>
+</clipPath>
+<clipPath id="c2">
+<path d="m77.7,418.7l35.4,0l0,17.5l-35.4,0l0,-17.5"/>
+</clipPath>
+<clipPath id="c3">
+<path d="m77.7,436.2l35.4,0l0,17.5l-35.4,0l0,-17.5"/>
+</clipPath>
+<clipPath id="c4">
+<path d="m60.2,7l588.1,0l0,464.1l-588.1,0l0,-464.1"/>
+</clipPath>
+</defs>
+<g stroke-linejoin="bevel" stroke-linecap="square" stroke="#000000" fill-rule="evenodd">
+<g clip-path="url(#c0)">
+<g fill="#ffffff" stroke-width="0.6">
+<path d="m60.2,7l588.1,0l0,464.1l-588.1,0l0,-464.1"/>
+</g>
+<g fill="#ffffff" stroke="none" stroke-width="1">
+<path d="m77.7,366.2l281.4,0l0,87.5l-281.4,0l0,-87.5"/>
+</g>
+<g fill="none" stroke="#ff0000" stroke-width="0.6">
+<path d="M77.7,375l35.4,0"/>
+</g>
+<g fill="none" stroke-width="1">
+<text x="130.6" y="368" font-size="14pt" fill="#000000">Optical surface brightness</text>
+</g>
+<g fill="none" stroke-dasharray="2.5,1.2" stroke-width="0.6">
+<path d="M77.7,392.5l35.4,0"/>
+</g>
+<g fill="none" stroke-width="1">
+<text x="130.6" y="385.5" font-size="14pt" fill="#000000">Electron density</text>
+</g>
+</g>
+<g clip-path="url(#c1)">
+<g fill="none" stroke-width="0.6">
+<path d="M95.4,403l0,14"/>
+<path d="M88.4,410l14,0"/>
+<path d="M77.7,410l35.4,0"/>
+</g>
+<g fill="#0000ff" stroke-linejoin="miter" stroke-width="0.6">
+<g transform="translate(95.4,410)">
+<path d="m3.7,0c0,2,-1.6,3.7,-3.7,3.7c-2,0,-3.7,-1.6,-3.7,-3.7c0,-2,1.6,-3.7,3.7,-3.7c2,0,3.7,1.6,3.7,3.7" id="p2"/>
+</g>
+</g>
+</g>
+<g clip-path="url(#c0)">
+<g fill="none" stroke-width="1">
+<text x="130.6" y="403" font-size="14pt" fill="#000000">Iron </text>
+<text x="174.4" y="403" font-size="14pt" fill="#000000">Chandra</text>
+<text x="235.6" y="403" font-size="14pt" fill="#000000"> Western</text>
+</g>
+</g>
+<g clip-path="url(#c2)">
+<g fill="none" stroke-width="0.6">
+<path d="M95.4,420.5l0,14"/>
+<path d="M88.4,427.5l14,0"/>
+<path d="M77.7,427.5l35.4,0"/>
+</g>
+<g fill="#808080" stroke-linejoin="miter" stroke-width="0.6">
+<g transform="translate(95.4,427.5)">
+<path d="m-2.2,4.1l2.2,-2.2l2.2,2.2l1.9,-1.9l-2.2,-2.2l2.2,-2.2l-1.9,-1.9l-2.2,2.2l-2.2,-2.2l-1.9,1.9l2.2,2.2l-2.2,2.2l1.9,1.9" id="p1"/>
+</g>
+</g>
+</g>
+<g clip-path="url(#c0)">
+<g fill="none" stroke-width="1">
+<text x="130.6" y="420.5" font-size="14pt" fill="#000000">Iron </text>
+<text x="174.4" y="420.5" font-size="14pt" fill="#000000">Chandra</text>
+<text x="235.6" y="420.5" font-size="14pt" fill="#000000"> Eastern</text>
+</g>
+</g>
+<g clip-path="url(#c3)">
+<g fill="none" stroke-width="0.6">
+<path d="M95.4,438l0,14"/>
+<path d="M88.4,445l14,0"/>
+<path d="M77.7,445l35.4,0"/>
+</g>
+<g fill="#ffffff" stroke-linejoin="miter" stroke-width="0.6">
+<g transform="translate(95.4,445)">
+<path d="m-3.7,-3.7l7.5,0l0,7.5l-7.5,0l0,-7.5" id="p0"/>
+</g>
+</g>
+</g>
+<g clip-path="url(#c0)">
+<g fill="none" stroke-width="1">
+<text x="130.6" y="438" font-size="14pt" fill="#000000">Iron </text>
+<text x="174.4" y="438" font-size="14pt" fill="#000000">XMM</text>
+</g>
+</g>
+<g clip-path="url(#c4)">
+<g fill="none" stroke-width="0.6">
+<polyline fill="none" points="387.7,276.4 443.2,357.4 495.8,408.7 546.2,406.3 591.1,426.7 630.4,465.5"/>
+</g>
+<g fill="none" stroke-linecap="butt" stroke-width="0.6">
+<path d="M387.7,286.6l0,-17.3M443.2,365.5l0,-17.1M495.8,418.8l0,-25M546.2,414.2l0,-15.9M591.1,435.3l0,-16.9M630.4,471.8l0,-14.8"/>
+<path d="M356.7,276.4l57.9,0M414.6,357.4l53.5,0M468.2,408.7l51.9,0M520.1,406.3l49.3,0M569.4,426.7l41.2,0M610.6,465.5l37.7,0"/>
+</g>
+<g fill="#ffffff" stroke-linejoin="miter" stroke-width="0.6">
+<use xlink:href="#p0" x="387.7" y="276.4"/>
+<use xlink:href="#p0" x="443.2" y="357.4"/>
+<use xlink:href="#p0" x="495.8" y="408.7"/>
+<use xlink:href="#p0" x="546.2" y="406.3"/>
+<use xlink:href="#p0" x="591.1" y="426.7"/>
+<use xlink:href="#p0" x="630.4" y="465.5"/>
+</g>
+</g>
+<g clip-path="url(#c0)">
+<g fill="none" stroke-linecap="butt" stroke-width="0.6">
+<path d="M530.7,471.2l0,-464.1"/>
+<path d="M530.7,471.2l-3.7,0M530.7,442.2l-3.7,0M530.7,413.2l-3.7,0M530.7,384.2l-3.7,0M530.7,355.2l-3.7,0M530.7,326.2l-3.7,0M530.7,297.1l-3.7,0M530.7,268.1l-3.7,0M530.7,239.1l-3.7,0M530.7,210.1l-3.7,0M530.7,181.1l-3.7,0M530.7,152.1l-3.7,0M530.7,123.1l-3.7,0M530.7,94.1l-3.7,0M530.7,65.1l-3.7,0M530.7,36l-3.7,0"/>
+<path d="M530.7,442.2l-7.5,0M530.7,384.2l-7.5,0M530.7,326.2l-7.5,0M530.7,268.1l-7.5,0M530.7,210.1l-7.5,0M530.7,152.1l-7.5,0M530.7,94.1l-7.5,0M530.7,36l-7.5,0"/>
+</g>
+<g fill="none" stroke-width="1">
+<g transform="matrix(0 1 -1 0 569.2 107.9)">
+<text x="0" y="0" font-size="14pt" fill="#000000">Iron metallicity (solar units)</text>
+</g>
+<text x="534.2" y="450.9" font-size="14pt" fill="#000000">0.4</text>
+<text x="534.2" y="392.9" font-size="14pt" fill="#000000">0.6</text>
+<text x="534.2" y="334.9" font-size="14pt" fill="#000000">0.8</text>
+<text x="534.2" y="276.9" font-size="14pt" fill="#000000">1</text>
+<text x="534.2" y="218.9" font-size="14pt" fill="#000000">1.2</text>
+<text x="534.2" y="160.8" font-size="14pt" fill="#000000">1.4</text>
+<text x="534.2" y="102.8" font-size="14pt" fill="#000000">1.6</text>
+<text x="534.2" y="44.8" font-size="14pt" fill="#000000">1.8</text>
+</g>
+</g>
+<g clip-path="url(#c4)">
+<g fill="none" stroke-width="0.6">
+<polyline fill="none" points="59.6,119.5 76.8,107.4 131.1,92.2 185.2,114.6 236.7,177.1 282.4,202.8 323.6,258.6 357.8,281.8 387.1,285.6 412.8,325.9 435.6,320.1 458,345.2"/>
+</g>
+<g fill="none" stroke-linecap="butt" stroke-width="0.6">
+<path d="M76.8,135.3l0,-57.1M131.1,118.1l0,-53.4M185.2,134.1l0,-39.7M236.7,201.2l0,-45M282.4,220.8l0,-35.8M323.6,276.4l0,-37.2M357.8,295.4l0,-27.8M387.1,298.3l0,-22.4M412.8,342.6l0,-34.9M435.6,335.7l0,-31.9M458,366.8l0,-44.1"/>
+<path d="M59.6,107.4l46.1,0M105.7,92.2l47.8,0M153.6,114.6l58.9,0M212.6,177.1l45.7,0M258.3,202.8l45.7,0M304,258.6l37.3,0M341.4,281.8l31.5,0M373,285.6l27.3,0M400.4,325.9l24.1,0M424.5,320.1l21.5,0M446.1,345.2l23.2,0"/>
+</g>
+<g fill="#808080" stroke-linejoin="miter" stroke-width="0.6">
+<use xlink:href="#p1" x="76.8" y="107.4"/>
+<use xlink:href="#p1" x="131.1" y="92.2"/>
+<use xlink:href="#p1" x="185.2" y="114.6"/>
+<use xlink:href="#p1" x="236.7" y="177.1"/>
+<use xlink:href="#p1" x="282.4" y="202.8"/>
+<use xlink:href="#p1" x="323.6" y="258.6"/>
+<use xlink:href="#p1" x="357.8" y="281.8"/>
+<use xlink:href="#p1" x="387.1" y="285.6"/>
+<use xlink:href="#p1" x="412.8" y="325.9"/>
+<use xlink:href="#p1" x="435.6" y="320.1"/>
+<use xlink:href="#p1" x="458" y="345.2"/>
+</g>
+<g fill="none" stroke-width="0.6">
+<polyline fill="none" points="59.6,105.1 76.8,98.9 131.1,63.3 185.2,64.8 236.7,45.4 282.4,125.4 323.6,115.1 357.8,155.7 387.1,231.8 412.8,313.9 435.6,343.3 458,331.8 480,416.1"/>
+</g>
+<g fill="none" stroke-linecap="butt" stroke-width="0.6">
+<path d="M76.8,121.4l0,-46.4M131.1,86.6l0,-50.6M185.2,83.7l0,-38.6M236.7,61.2l0,-27.3M282.4,138.8l0,-27.1M323.6,130.6l0,-26.1M357.8,171.2l0,-31.2M387.1,248.9l0,-33.4M412.8,329.8l0,-32.3M435.6,359.4l0,-31.7M458,348.4l0,-33.9M480,430.8l0,-30.8"/>
+<path d="M59.6,98.9l46.1,0M105.7,63.3l47.8,0M153.6,64.8l58.9,0M212.6,45.4l45.7,0M258.3,125.4l45.7,0M304,115.1l37.3,0M341.4,155.7l31.5,0M373,231.8l27.3,0M400.4,313.9l24.1,0M424.5,343.3l21.5,0M446.1,331.8l23.2,0M469.3,416.1l20.8,0"/>
+</g>
+<g fill="#0000ff" stroke-linejoin="miter" stroke-width="0.6">
+<use xlink:href="#p2" x="76.8" y="98.9"/>
+<use xlink:href="#p2" x="131.1" y="63.3"/>
+<use xlink:href="#p2" x="185.2" y="64.8"/>
+<use xlink:href="#p2" x="236.7" y="45.4"/>
+<use xlink:href="#p2" x="282.4" y="125.4"/>
+<use xlink:href="#p2" x="323.6" y="115.1"/>
+<use xlink:href="#p2" x="357.8" y="155.7"/>
+<use xlink:href="#p2" x="387.1" y="231.8"/>
+<use xlink:href="#p2" x="412.8" y="313.9"/>
+<use xlink:href="#p2" x="435.6" y="343.3"/>
+<use xlink:href="#p2" x="458" y="331.8"/>
+<use xlink:href="#p2" x="480" y="416.1"/>
+</g>
+<g fill="none" stroke-dasharray="2.5,1.2" stroke-width="0.6">
+<polyline fill="none" points="60.2,32.3 72.2,39.4 84.2,46.6 96.2,53.8 108.2,60.9 120.2,68.1 132.2,75.3 144.2,82.5 156.2,89.8 168.2,97 180.2,104.3 192.2,111.5 204.2,118.8 216.2,126.1 228.2,133.5 240.2,140.8 252.2,148.2 264.3,155.6 276.3,163 288.3,170.5 300.3,177.9 312.3,185.4 324.3,193 336.3,200.5 348.3,208.1 360.3,215.8 372.3,223.5 384.3,231.2 396.3,239 408.3,246.8 420.3,254.6 432.3,262.6 444.3,270.5 456.3,278.6 468.3,286.7 480.3,294.9 492.3,303.1 504.3,311.4 516.3,319.9 528.3,328.4 540.3,337 552.3,345.7 564.3,354.6 576.4,363.5 588.4,372.7 600.4,381.9 612.4,391.3 624.4,400.9 636.4,410.7 648.4,420.7"/>
+</g>
+<g fill="none" stroke="#ff0000" stroke-width="0.6">
+<polyline fill="none" points="60.2,44.6 72.2,50 84.2,55.4 96.2,61 108.2,66.6 120.2,72.3 132.2,78.1 144.2,84 156.2,89.9 168.2,96 180.2,102.1 192.2,108.3 204.2,114.6 216.2,121 228.2,127.5 240.2,134.1 252.2,140.8 264.3,147.6 276.3,154.5 288.3,161.5 300.3,168.6 312.3,175.8 324.3,183.2 336.3,190.6 348.3,198.1 360.3,205.7 372.3,213.5 384.3,221.4 396.3,229.4 408.3,237.5 420.3,245.7 432.3,254 444.3,262.5 456.3,271.1 468.3,279.8 480.3,288.6 492.3,297.6 504.3,306.7 516.3,316 528.3,325.3 540.3,334.9 552.3,344.5 564.3,354.3 576.4,364.3 588.4,374.4 600.4,384.6 612.4,395 624.4,405.5 636.4,416.2 648.4,427.1"/>
+</g>
+</g>
+<g clip-path="url(#c0)">
+<g fill="none" stroke-linecap="butt" stroke-width="0.6">
+<path d="M648.4,471.2l0,-464.1"/>
+<path d="M648.4,376.6l-3.7,0M648.4,321.3l-3.7,0M648.4,282l-3.7,0M648.4,251.6l-3.7,0M648.4,226.7l-3.7,0M648.4,205.6l-3.7,0M648.4,187.4l-3.7,0M648.4,171.3l-3.7,0M648.4,62.4l-3.7,0M648.4,7l-3.7,0"/>
+<path d="M648.4,471.2l-7.5,0M648.4,157l-7.5,0"/>
+</g>
+<g fill="none" stroke-width="1">
+<g transform="matrix(0 1 -1 0 706.9 142)">
+<text x="0" y="0" font-size="14pt" fill="#000000">Electron density (cm</text>
+<text x="175" y="-7" font-size="8pt" fill="#000000">-3</text>
+<text x="185.5" y="0" font-size="14pt" fill="#000000">)</text>
+</g>
+<text x="651.9" y="480" font-size="14pt" fill="#000000">10</text>
+<text x="669.4" y="473" font-size="8pt" fill="#000000">&#8722;3</text>
+<text x="651.9" y="165.7" font-size="14pt" fill="#000000">0.01</text>
+</g>
+<g fill="none" stroke-linecap="butt" stroke-width="0.6">
+<path d="M60.2,471.2l0,-464.1"/>
+<path d="M60.2,7l3.7,0M60.2,32.8l3.7,0M60.2,58.6l3.7,0M60.2,84.4l3.7,0M60.2,110.2l3.7,0M60.2,136l3.7,0M60.2,161.8l3.7,0M60.2,187.5l3.7,0M60.2,213.3l3.7,0M60.2,239.1l3.7,0M60.2,264.9l3.7,0M60.2,290.7l3.7,0M60.2,316.5l3.7,0M60.2,342.3l3.7,0M60.2,368.1l3.7,0M60.2,393.8l3.7,0M60.2,419.6l3.7,0M60.2,445.4l3.7,0M60.2,471.2l3.7,0"/>
+<path d="M60.2,7l7.5,0M60.2,110.2l7.5,0M60.2,213.3l7.5,0M60.2,316.5l7.5,0M60.2,419.6l7.5,0"/>
+</g>
+<g fill="none" stroke-width="1">
+<g transform="matrix(0 -1 1 0 30.4 415)">
+<text x="0" y="0" font-size="14pt" fill="#000000">Optical surface brightness (mag arcsec</text>
+<text x="332.5" y="-7" font-size="8pt" fill="#000000">-2</text>
+<text x="343" y="0" font-size="14pt" fill="#000000">)</text>
+</g>
+<text x="39.2" y="21" font-size="14pt" fill="#000000">22</text>
+<text x="39.2" y="118.9" font-size="14pt" fill="#000000">24</text>
+<text x="39.2" y="222.1" font-size="14pt" fill="#000000">26</text>
+<text x="39.2" y="325.2" font-size="14pt" fill="#000000">28</text>
+<text x="39.2" y="428.4" font-size="14pt" fill="#000000">30</text>
+</g>
+<g fill="none" stroke-linecap="butt" stroke-width="0.6">
+<path d="M60.2,471.2l588.1,0"/>
+<path d="M60.2,471.2l0,-3.7M84.3,471.2l0,-3.7M248,471.2l0,-3.7M331.1,471.2l0,-3.7M390.1,471.2l0,-3.7M435.8,471.2l0,-3.7M473.2,471.2l0,-3.7M504.8,471.2l0,-3.7M532.1,471.2l0,-3.7M556.3,471.2l0,-3.7"/>
+<path d="M105.9,471.2l0,-7.5M577.9,471.2l0,-7.5"/>
+</g>
+<g fill="none" stroke-width="1">
+<text x="301.8" y="485.2" font-size="14pt" fill="#000000">Radius (kpc)</text>
+<text x="97.2" y="476.5" font-size="14pt" fill="#000000">10</text>
+<text x="564.7" y="476.5" font-size="14pt" fill="#000000">100</text>
+</g>
+<g fill="none" stroke-linecap="butt" stroke-width="0.6">
+<path d="M60.2,7l588.1,0"/>
+<path d="M60.2,7l0,3.7M84.3,7l0,3.7M248,7l0,3.7M331.1,7l0,3.7M390.1,7l0,3.7M435.8,7l0,3.7M473.2,7l0,3.7M504.8,7l0,3.7M532.1,7l0,3.7M556.3,7l0,3.7"/>
+<path d="M105.9,7l0,7.5M577.9,7l0,7.5"/>
+</g>
+</g>
+</g>
+</svg>

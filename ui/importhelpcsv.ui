@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ImportCSVHelpDialog</class>
+ <widget class="QDialog" name="ImportCSVHelpDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>457</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>CSV import help</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QTextEdit" name="textEdit">
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+     <property name="html">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:xx-large; font-weight:600;&quot;&gt;CSV (Comma Separated Value)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;CSV files are often used to export data from applications such as Excel and OpenOffice.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:x-large; font-weight:600;&quot;&gt;Headers&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Place a dataset name at the top of each column. To import error bars, columns with the names &quot;+&quot;, &quot;-&quot; or &quot;+-&quot; should be given in columns immediately to the right of the dataset, for positive, negative or symmetric errors, respectively.&lt;/p&gt;&lt;p&gt;In the standard Multiple header mode, multiple datasets can be placed below each other if new names are given. If your data only consist of a single header, you can choose the Single header mode, which will prevent Veusz from starting new datasets if it sees text. If your data have no header, choose None and your columns will be named automatically.&lt;/p&gt;&lt;p&gt;Veusz can also read data organised in rows rather than columns (choose the rows option under Directions). Veusz can also ignore the specified number of lines in columns which follow header items.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:x-large; font-weight:600;&quot;&gt;Data types&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Veusz will try to guss the data type (numeric, text or date) depending on what values it sees. You can override this by putting the datatype name in brackets in the column header. If you want to read in text use (text) after the name of the dataset in the top column, e.g. &quot;name (text)&quot;. Date-times can have &quot; (date)&quot; after the column name. Veusz uses ISO dates by default YYYY-MM-DDThh:mm:ss, but this can be changed.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:x-large; font-weight:600;&quot;&gt;Options&lt;/span&gt;&lt;/p&gt;&lt;p&gt;There are several variants of CSV files used. You may wish to change the delimiter to be a tab (TSV) or space. Your file may also use European or English numerical values e.g. (1,23 or 1.23), so you may wish to override your computer's default format.&lt;/p&gt;&lt;p&gt;There are many different date and time formats. You can enter your own format in the box given [a combination of YYYY (or YY), MM (or M), DD (or D), HH, MM and SS].&lt;/p&gt;&lt;p&gt;The &quot;Treat blanks as data values&quot; option will insert NaN values or empty strings into datasets, if blank data values are encountered.&lt;/p&gt;&lt;p&gt;If you are using non-ASCII characters in your text you need to encode the text in your file with a Unicode encoding (e.g. UTF-8) and choose the correct encoding in the encoding drop down box. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Close</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>clicked(QAbstractButton*)</signal>
+   <receiver>ImportCSVHelpDialog</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

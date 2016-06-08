@@ -1,0 +1,19 @@
+# files Git should always ignore
+
+*.pyc
+build/
+veusz/helpers/*.pyd
+veusz/helpers/*.so
+*~
+MANIFEST
+dist/
+
+# generated files
+Documents/manual.html
+Documents/manual.pdf
+Documents/manual.txt
+Documents/veusz.1
+Documents/veusz_listen.1
+
+.idea/
+veusz.egg-info/

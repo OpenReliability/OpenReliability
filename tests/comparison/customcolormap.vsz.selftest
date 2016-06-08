@@ -1,0 +1,86 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="531.4px" height="531.4px" version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+<desc>Veusz output document</desc>
+<defs>
+<clipPath id="c0">
+<path d="m0,0l531.4,0l0,531.4l-531.4,0l0,-531.4"/>
+</clipPath>
+<clipPath id="c1">
+<path d="m60.2,7l464.1,0l0,464.1l-464.1,0l0,-464.1"/>
+</clipPath>
+<clipPath id="c2">
+<path d="m77.7,24.5l429.1,0l0,17.5l-429.1,0l0,-17.5"/>
+</clipPath>
+</defs>
+<g stroke-linejoin="bevel" stroke-linecap="square" stroke="#000000" fill-rule="evenodd">
+<g clip-path="url(#c0)">
+<g fill="#ffffff" stroke-width="0.6">
+<path d="m60.2,7l464.1,0l0,464.1l-464.1,0l0,-464.1"/>
+</g>
+</g>
+<g clip-path="url(#c1)">
+<g fill="none" stroke-width="1">
+<image x="60.2" y="7" width="464.1" height="464.1" xlink:href="data:image/ppm;base64,UDYKMTEgMTEKMjU1CgAAADMzAGZmAJmZAMzMAP//AMvLAJiYAGVlADIyAAAAAAAAAC0tAFtbAImJALe3AOXlAOrqALy8AI6OAGBgADIyAAAAACgoAFFRAHp6AKOjAMzMAPT0AODgALe3AI6OAGVlAAAAACMjAEdHAGtrAI6OALKyANbWAPn5AODgALy8AJiYAAAAAB4eAD09AFtbAHp6AJmZALe3ANbWAPT0AOrqAMvLAAAAABkZADMzAExMAGZmAH9/AJmZALKyAMzMAOXlAP//AAAAABQUACgoAD09AFFRAGZmAHp6AI6OAKOjALe3AMzMAAAAAA8PAB4eAC0tAD09AExMAFtbAGtrAHp6AImJAJmZAAAAAAoKABQUAB4eACgoADMzAD09AEdHAFFRAFtbAGZmAAAAAAUFAAoKAA8PABQUABkZAB4eACMjACgoAC0tADMzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==" preserveAspectRatio="none"/>
+</g>
+</g>
+<g clip-path="url(#c2)">
+<g fill="none" stroke-width="1">
+<image x="77.7" y="24.5" width="429.1" height="17.5" xlink:href="data:image/ppm;base64,UDYKMTI4IDEKMjU1CgAAAAQEAAgIAAwMABAQABQUABgYABwcACAgACQkACgoACwsADAwADQ0ADg4ADw8AEBAAEREAEhIAExMAFBQAFRUAFhYAFxcAGBgAGRkAGhoAGxsAHBwAHR0AHh4AHx8AICAAISEAIiIAIyMAJCQAJSUAJiYAJycAKCgAKSkAKioAKysALCwALS0ALi4ALy8AMDAAMTEAMjIAMzMANDQANTUANjYANzcAODgAOTkAOjoAOzsAPDwAPT0APj4APz8APz8APj4APT0APDwAOzsAOjoAOTkAODgANzcANjYANTUANDQAMzMAMjIAMTEAMDAALy8ALi4ALS0ALCwAKysAKioAKSkAKCgAJycAJiYAJSUAJCQAIyMAIiIAISEAICAAHx8AHh4AHR0AHBwAGxsAGhoAGRkAGBgAFxcAFhYAFRUAFBQAExMAEhIAEREAEBAADw8ADg4ADQ0ADAwACwsACgoACQkACAgABwcABgYABQUABAQAAwMAAgIAAQEAAAAAA==" preserveAspectRatio="none"/>
+</g>
+</g>
+<g clip-path="url(#c0)">
+<g fill="none" stroke-width="0.6">
+<path d="m77.7,24.5l429.1,0l0,17.5l-429.1,0l0,-17.5"/>
+</g>
+<g fill="none" stroke-linecap="butt" stroke-width="0.6">
+<path d="M77.7,42l429.1,0"/>
+<path d="M77.7,42l0,-3.7M99.1,42l0,-3.7M120.6,42l0,-3.7M142.1,42l0,-3.7M163.5,42l0,-3.7M185,42l0,-3.7M206.4,42l0,-3.7M227.9,42l0,-3.7M249.4,42l0,-3.7M270.8,42l0,-3.7M292.3,42l0,-3.7M313.7,42l0,-3.7M335.2,42l0,-3.7M356.6,42l0,-3.7M378.1,42l0,-3.7M399.6,42l0,-3.7M421,42l0,-3.7M442.5,42l0,-3.7M463.9,42l0,-3.7M485.4,42l0,-3.7M506.9,42l0,-3.7"/>
+<path d="M77.7,42l0,-7.5M163.5,42l0,-7.5M249.4,42l0,-7.5M335.2,42l0,-7.5M421,42l0,-7.5M506.9,42l0,-7.5"/>
+</g>
+<g fill="none" stroke-width="1">
+<text x="73.3" y="47.3" font-size="14pt" fill="#000000">0</text>
+<text x="150.4" y="47.3" font-size="14pt" fill="#000000">0.2</text>
+<text x="236.2" y="47.3" font-size="14pt" fill="#000000">0.4</text>
+<text x="322.1" y="47.3" font-size="14pt" fill="#000000">0.6</text>
+<text x="407.9" y="47.3" font-size="14pt" fill="#000000">0.8</text>
+<text x="502.5" y="47.3" font-size="14pt" fill="#000000">1</text>
+</g>
+<g fill="none" stroke-linecap="butt" stroke-width="0.6">
+<path d="M60.2,471.2l0,-464.1"/>
+<path d="M60.2,471.2l3.7,0M60.2,450.1l3.7,0M60.2,429l3.7,0M60.2,407.9l3.7,0M60.2,386.8l3.7,0M60.2,365.7l3.7,0M60.2,344.6l3.7,0M60.2,323.5l3.7,0M60.2,302.4l3.7,0M60.2,281.3l3.7,0M60.2,260.2l3.7,0M60.2,239.1l3.7,0M60.2,218l3.7,0M60.2,196.9l3.7,0M60.2,175.8l3.7,0M60.2,154.7l3.7,0M60.2,133.6l3.7,0M60.2,112.5l3.7,0M60.2,91.4l3.7,0M60.2,70.3l3.7,0M60.2,49.2l3.7,0M60.2,28.1l3.7,0M60.2,7l3.7,0"/>
+<path d="M60.2,450.1l7.5,0M60.2,344.6l7.5,0M60.2,239.1l7.5,0M60.2,133.6l7.5,0M60.2,28.1l7.5,0"/>
+</g>
+<g fill="none" stroke-width="1">
+<text x="47.9" y="458.9" font-size="14pt" fill="#000000">0</text>
+<text x="21.7" y="353.4" font-size="14pt" fill="#000000">0.25</text>
+<text x="30.4" y="247.9" font-size="14pt" fill="#000000">0.5</text>
+<text x="21.7" y="142.4" font-size="14pt" fill="#000000">0.75</text>
+<text x="47.9" y="36.9" font-size="14pt" fill="#000000">1</text>
+</g>
+<g fill="none" stroke-linecap="butt" stroke-width="0.6">
+<path d="M60.2,471.2l464.1,0"/>
+<path d="M60.2,471.2l0,-3.7M81.3,471.2l0,-3.7M102.4,471.2l0,-3.7M123.5,471.2l0,-3.7M144.6,471.2l0,-3.7M165.7,471.2l0,-3.7M186.8,471.2l0,-3.7M207.9,471.2l0,-3.7M229,471.2l0,-3.7M250.1,471.2l0,-3.7M271.2,471.2l0,-3.7M292.3,471.2l0,-3.7M313.4,471.2l0,-3.7M334.5,471.2l0,-3.7M355.6,471.2l0,-3.7M376.7,471.2l0,-3.7M397.8,471.2l0,-3.7M418.9,471.2l0,-3.7M440,471.2l0,-3.7M461.1,471.2l0,-3.7M482.2,471.2l0,-3.7M503.3,471.2l0,-3.7M524.4,471.2l0,-3.7"/>
+<path d="M81.3,471.2l0,-7.5M186.8,471.2l0,-7.5M292.3,471.2l0,-7.5M397.8,471.2l0,-7.5M503.3,471.2l0,-7.5"/>
+</g>
+<g fill="none" stroke-width="1">
+<text x="76.9" y="476.5" font-size="14pt" fill="#000000">0</text>
+<text x="169.3" y="476.5" font-size="14pt" fill="#000000">0.25</text>
+<text x="279.1" y="476.5" font-size="14pt" fill="#000000">0.5</text>
+<text x="380.3" y="476.5" font-size="14pt" fill="#000000">0.75</text>
+<text x="498.9" y="476.5" font-size="14pt" fill="#000000">1</text>
+</g>
+<g fill="none" stroke-linecap="butt" stroke-width="0.6">
+<path d="M524.4,471.2l0,-464.1"/>
+<path d="M524.4,471.2l-3.7,0M524.4,450.1l-3.7,0M524.4,429l-3.7,0M524.4,407.9l-3.7,0M524.4,386.8l-3.7,0M524.4,365.7l-3.7,0M524.4,344.6l-3.7,0M524.4,323.5l-3.7,0M524.4,302.4l-3.7,0M524.4,281.3l-3.7,0M524.4,260.2l-3.7,0M524.4,239.1l-3.7,0M524.4,218l-3.7,0M524.4,196.9l-3.7,0M524.4,175.8l-3.7,0M524.4,154.7l-3.7,0M524.4,133.6l-3.7,0M524.4,112.5l-3.7,0M524.4,91.4l-3.7,0M524.4,70.3l-3.7,0M524.4,49.2l-3.7,0M524.4,28.1l-3.7,0M524.4,7l-3.7,0"/>
+<path d="M524.4,450.1l-7.5,0M524.4,344.6l-7.5,0M524.4,239.1l-7.5,0M524.4,133.6l-7.5,0M524.4,28.1l-7.5,0"/>
+<path d="M60.2,7l464.1,0"/>
+<path d="M60.2,7l0,3.7M81.3,7l0,3.7M102.4,7l0,3.7M123.5,7l0,3.7M144.6,7l0,3.7M165.7,7l0,3.7M186.8,7l0,3.7M207.9,7l0,3.7M229,7l0,3.7M250.1,7l0,3.7M271.2,7l0,3.7M292.3,7l0,3.7M313.4,7l0,3.7M334.5,7l0,3.7M355.6,7l0,3.7M376.7,7l0,3.7M397.8,7l0,3.7M418.9,7l0,3.7M440,7l0,3.7M461.1,7l0,3.7M482.2,7l0,3.7M503.3,7l0,3.7M524.4,7l0,3.7"/>
+<path d="M81.3,7l0,7.5M186.8,7l0,7.5M292.3,7l0,7.5M397.8,7l0,7.5M503.3,7l0,7.5"/>
+</g>
+</g>
+</g>
+</svg>

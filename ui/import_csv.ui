@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>csvtab</class>
+ <widget class="QWidget" name="csvtab">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>548</width>
+    <height>491</height>
+   </rect>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="label_8">
+     <property name="text">
+      <string>File preview:</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QTableWidget" name="previewtablecsv">
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
+     </property>
+     <property name="tabKeyNavigation">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QGridLayout" name="gridLayout_2">
+     <item row="0" column="0" rowspan="2">
+      <widget class="QGroupBox" name="groupBox_3">
+       <property name="title">
+        <string>Behaviour</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>Header mode</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="HistoryValueCombo" name="csvheadermodecombo">
+          <property name="toolTip">
+           <string>'Multiple': allow multiple headers in file
+'Single': 1st non-blank row is header
+'None': no headers, guess data types</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_4">
+          <property name="text">
+           <string>&amp;Direction</string>
+          </property>
+          <property name="buddy">
+           <cstring>csvdirectioncombo</cstring>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="HistoryValueCombo" name="csvdirectioncombo">
+          <property name="toolTip">
+           <string>Are the data arranged in columns or rows?</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_2">
+          <property name="text">
+           <string>Ignore rows at top</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="HistorySpinBox" name="csvignoretopspin">
+          <property name="toolTip">
+           <string>Ignore N row at the top of the file.
+If data are arranged in rows, ignores columns instead.</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>Ignore rows after headers</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="HistorySpinBox" name="csvignorehdrspin">
+          <property name="toolTip">
+           <string>After reading a header, ignore N rows in that column.
+If Direction is set to Rows, ignore N columns instead.</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="HistoryCheck" name="csvblanksdatacheck">
+          <property name="text">
+           <string>Treat blanks as data values</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QPushButton" name="csvhelpbutton">
+          <property name="toolTip">
+           <string>Help on how CSV files should be formatted</string>
+          </property>
+          <property name="text">
+           <string>Help</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QGroupBox" name="groupBox_2">
+       <property name="title">
+        <string>Locale</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_4">
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_5">
+          <property name="text">
+           <string>Numerics</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="HistoryValueCombo" name="csvnumfmtcombo">
+          <property name="toolTip">
+           <string>Numerical format of numbers in file:
+ System - what this computer is set to use
+ English - format 123,456.78
+ European - format 123.456,78</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_6">
+          <property name="text">
+           <string>Dates</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="HistoryCombo" name="csvdatefmtcombo">
+          <property name="toolTip">
+           <string>Format for dates and times in file.
+This will be combination of
+YYYY, YY, MM, M, DD, D, hh, h, mm, m, ss and s
+separated by |</string>
+          </property>
+          <property name="editable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QGroupBox" name="groupBox">
+       <property name="title">
+        <string>Delimiters</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_7">
+          <property name="text">
+           <string>Column</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="HistoryCombo" name="csvdelimitercombo">
+          <property name="toolTip">
+           <string>Delimiter between fields. This is usually a comma.</string>
+          </property>
+          <property name="editable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="HistoryCheck" name="csvskipwhitespacecheck">
+          <property name="text">
+           <string>Skip initial white space</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_9">
+          <property name="text">
+           <string>Text</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="HistoryCombo" name="csvtextdelimitercombo">
+          <property name="toolTip">
+           <string>Character to delimit text, usually a quote (&quot;).</string>
+          </property>
+          <property name="editable">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>HistoryCombo</class>
+   <extends>QComboBox</extends>
+   <header>historycombo.h</header>
+  </customwidget>
+  <customwidget>
+   <class>HistoryCheck</class>
+   <extends>QCheckBox</extends>
+   <header>historycheck.h</header>
+  </customwidget>
+  <customwidget>
+   <class>HistorySpinBox</class>
+   <extends>QSpinBox</extends>
+   <header>historyspinbox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>HistoryValueCombo</class>
+   <extends>QComboBox</extends>
+   <header>historyvaluecombo.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
