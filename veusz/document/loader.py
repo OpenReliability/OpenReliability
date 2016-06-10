@@ -215,13 +215,13 @@ def loadHDF5Doc(thedoc, filename, callbackunsafe=None):
 
         hdffile.close()
 
-def loadDocument(thedoc, filename, mode='vsz', callbackunsafe=None):
+def loadDocument(thedoc, filename, mode='ore', callbackunsafe=None):
     """Load document from file.
 
-    mode is 'vsz' or 'hdf5'
+    mode is 'ore' or 'hdf5'
     """
 
-    if mode == 'vsz':
+    if mode == 'ore':
         try:
             with io.open(filename, 'rU', encoding='utf-8') as f:
                 script = f.read()
@@ -229,7 +229,7 @@ def loadDocument(thedoc, filename, mode='vsz', callbackunsafe=None):
             raise LoadError( _("Cannot open document '%s'\n\n%s") %
                              (os.path.basename(filename), cstrerror(e)) )
         except UnicodeDecodeError:
-            raise LoadError( _("File '%s' is not a valid Veusz document") %
+            raise LoadError( _("File '%s' is not a valid OpenReliability document") %
                              os.path.basename(filename) )
 
         thedoc.wipe()

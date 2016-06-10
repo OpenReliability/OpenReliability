@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+#    This file is part of the OpenReliability project.
+#
+#    This software is based on Veusz, released under GPL by Jeremy Sanders
 #    Copyright (C) 2011 Jeremy S. Sanders
 #    Email: Jeremy Sanders <jeremy@jeremysanders.net>
 #
@@ -88,9 +91,9 @@ class StepIntro(TutorialStep):
     def __init__(self, mainwin):
         TutorialStep.__init__(
             self, _('''
-<h1>Welcome to Veusz!</h1>
+<h1>Welcome to OpenReliability!</h1>
 
-<p>This tutorial aims to get you working with Veusz as quickly as
+<p>This tutorial aims to get you working with OpenReliability as quickly as
 possible.</p>
 
 <p>You can close this tutorial at any time using the close button to
@@ -106,7 +109,7 @@ class StepWidgets1(TutorialStep):
             self, _('''
 <h1>Widgets</h1>
 
-<p>Plots in Veusz are constructed from <i>widgets</i>.  Different
+<p>Plots in OpenReliability are constructed from <i>widgets</i>.  Different
 types of widgets are used to make different parts of a plot. For
 example, there are widgets for axes, for a graph, for plotting data
 and for plotting functions.</p>
@@ -182,7 +185,7 @@ class StepPropertiesWin2(TutorialStep):
         TutorialStep.__init__(
             self, _('''
 <p>Notice that the x axis label of your plot has now been updated.
-Veusz supports LaTeX style formatting for labels, so you could include
+OpenReliability supports LaTeX style formatting for labels, so you could include
 superscripts, subscripts and fractions.</p>
 
 <p>Other important axis properties include the minimum, maximum values
@@ -238,7 +241,7 @@ default function widgets plot y=x.</p>
 <p class="usercmd">Go to the Function property and change the function to
 be <code>x**2</code>, plotting x squared.</p>
 
-<p>(Veusz uses Python syntax for its functions, so the power operator
+<p>(OpenReliability uses Python syntax for its functions, so the power operator
 is <code>**</code>, rather than <code>^</code>)</p>
 '''), mainwin,
             nextonsetting = ('/page1/graph1/function1/function',
@@ -291,7 +294,7 @@ class FunctionLineFormatting(TutorialStep):
     def __init__(self, mainwin):
         TutorialStep.__init__(
             self, _('''
-<p>Veusz lets you choose a line style, thickness and color for the
+<p>OpenReliability lets you choose a line style, thickness and color for the
 function line.</p>
 
 <p class="usercmd">Choose a new line color for the line.</p>
@@ -311,7 +314,7 @@ class DataStart(TutorialStep):
             self, _('''
 <h1>Datasets</h1>
 
-<p>Many widgets in Veusz plot datasets. Datasets can be imported from
+<p>Many widgets in OpenReliability plot datasets. Datasets can be imported from
 files, entered manually or created from existing datasets using
 operations or expressions.</p>
 
@@ -377,10 +380,10 @@ class DataImportDialog2(TutorialStep):
     def __init__(self, mainwin):
         TutorialStep.__init__(
             self, _('''
-<p>Veusz will try to guess the datatype - numeric, text or date - from
+<p>OpenReliability will try to guess the datatype - numeric, text or date - from
 the data in the file or you can specify it manually.</p>
 
-<p>Several different data formats are supported in Veusz and plugins
+<p>Several different data formats are supported in OpenReliability and plugins
 can be defined to import any data format. The Link option links data
 to the original file.</p>
 
@@ -398,7 +401,7 @@ class DataImportDialog3(TutorialStep):
     def __init__(self, mainwin):
         TutorialStep.__init__(
             self, _('''
-<p>Notice how Veusz has loaded the three different datasets from the
+<p>Notice how OpenReliability has loaded the three different datasets from the
 file. You could carry on importing new datasets from the Import dialog
 box or reopen it later.</p>
 
@@ -445,7 +448,7 @@ class AddXYPlotter(TutorialStep):
             self, _('''
 <h1>Plotting data</h1>
 
-<p>The point plotting widget plots datasets loaded in Veusz.</p>
+<p>The point plotting widget plots datasets loaded in OpenReliability.</p>
 
 <p class="usercmd">The flashing icon adds a point plotting (xy)
 widget. Click on this, or go to the Add menu and choose "Add xy".</p>
@@ -488,7 +491,7 @@ class SetXYLine(TutorialStep):
     def __init__(self, mainwin):
         TutorialStep.__init__(
             self, _('''
-<p>Veusz has now plotted the data on the graph. You can manipulate how
+<p>OpenReliability has now plotted the data on the graph. You can manipulate how
 the data are shown using the formatting settings.</p>
 
 <p class="usercmd">Make sure that the line Formatting tab (%s) for the
@@ -586,7 +589,7 @@ class File1(TutorialStep):
 <p>The document can be saved under the File menu, choosing "Save
 as...", or by clicking on the Save icon (flashing).</p>
 
-<p>Veusz documents are simple text files which can be easily modified
+<p>OpenReliability documents are simple text files which can be easily modified
 outside the program.</p>
 
 <p class="usercmd">Click Next to continue</p>
@@ -735,8 +738,8 @@ class EndStep(TutorialStep):
             self, _('''
 <h1>The End</h1>
 
-<p>Thank you for working through this Veusz tutorial. We hope you
-enjoy using Veusz!</p>
+<p>Thank you for working through this OpenReliability tutorial. We hope you
+enjoy using OpenReliability!</p>
 
 <p>Please send comments, bug reports and suggestions to the
 developers via the mailing list.</p>
@@ -751,8 +754,8 @@ class TutorialDock(qt4.QDockWidget):
         qt4.QDockWidget.__init__(self, *args)
         self.setAttribute(qt4.Qt.WA_DeleteOnClose)
         self.setMinimumHeight(300)
-        self.setWindowTitle('Tutorial - Veusz')
-        self.setObjectName('veusztutorialwindow')
+        self.setWindowTitle('Tutorial - OpenReliability')
+        self.setObjectName('OpenReliabilitytutorialwindow')
 
         self.setStyleSheet('background: lightyellow;')
 

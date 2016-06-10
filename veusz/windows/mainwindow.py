@@ -116,7 +116,7 @@ class MainWindow(qt4.QMainWindow):
         self.setAcceptDrops(True)
 
         # icon and different size variations
-        self.setWindowIcon( utils.getIcon('veusz') )
+        self.setWindowIcon( utils.getIcon('veusz') ) # TO BE CHANGED
 
         # master documenent
         self.document = document.Document()
@@ -257,7 +257,7 @@ class MainWindow(qt4.QMainWindow):
         else:
             # get list of vsz files dropped
             urls = [u.path() for u in mime.urls()]
-            urls = [u for u in urls if os.path.splitext(u)[1] == '.vsz']
+            urls = [u for u in urls if os.path.splitext(u)[1] == '.vsz'] # TO BE MODIFIED
             return urls
 
     def setupDefaultDoc(self):
@@ -544,7 +544,7 @@ class MainWindow(qt4.QMainWindow):
         tb = self.maintoolbar = qt4.QToolBar(_("Main toolbar - OpenReliability"), self)
         iconsize = setdb['toolbar_size']
         tb.setIconSize(qt4.QSize(iconsize, iconsize))
-        tb.setObjectName('veuszmaintoolbar')
+        tb.setObjectName('OpenReliabilitymaintoolbar')
         self.addToolBar(qt4.Qt.TopToolBarArea, tb)
         utils.addToolbarActions(tb, self.vzactions,
                                 ('file.new', 'file.open', 'file.save',
@@ -553,7 +553,7 @@ class MainWindow(qt4.QMainWindow):
         # data toolbar
         tb = self.datatoolbar = qt4.QToolBar(_("Data toolbar - OpenReliability"), self)
         tb.setIconSize(qt4.QSize(iconsize, iconsize))
-        tb.setObjectName('veuszdatatoolbar')
+        tb.setObjectName('OpenReliabilitydatatoolbar')
         self.addToolBar(qt4.Qt.TopToolBarArea, tb)
         utils.addToolbarActions(
             tb, self.vzactions,
@@ -606,11 +606,11 @@ class MainWindow(qt4.QMainWindow):
             'data.reload',
             ]
         helpmenu = [
-            'help.home', 'help.project', 'help.bug',
+            'help.home', 'help.bug',
             '',
             'help.tutorial',
             '',
-            ['help.examples', _('&Example documents'), []],
+            #['help.examples', _('&Example documents'), []],
             '',
             'help.about'
             ]
@@ -632,7 +632,7 @@ class MainWindow(qt4.QMainWindow):
         self.menus = {}
         utils.constructMenus(self.menuBar(), self.menus, menus, self.vzactions)
 
-        self.populateExamplesMenu()
+        #self.populateExamplesMenu()
 
     def _setPickerFont(self, label):
         f = label.font()
@@ -964,7 +964,7 @@ class MainWindow(qt4.QMainWindow):
     def fileOpenDialog(self, filters, dialogtitle):
         """Display an open dialog and return a filename.
 
-        filters: list of filters in format "Filetype (*.vsz)"
+        filters: list of filters in format "Filetype (*.ore)"
         """
 
         fd = qt4.QFileDialog(self, dialogtitle)
@@ -984,7 +984,7 @@ class MainWindow(qt4.QMainWindow):
                     pass
             except EnvironmentError as e:
                 qt4.QMessageBox.critical(
-                    self, _("Error - Veusz"),
+                    self, _("Error - OpenReliability"),
                     _("Unable to open '%s'\n\n%s") %
                     (filename, cstrerror(e)))
                 return None
@@ -994,9 +994,9 @@ class MainWindow(qt4.QMainWindow):
     def slotFileSaveAs(self):
         """Save As file."""
 
-        filters = [_('Veusz document files (*.vsz)')]
+        filters = [_('OpenReliability document files (*.ore)')]
         if h5py is not None:
-            filters += [_('Veusz HDF5 document files (*.vszh5)')]
+            filters += [_('OpenReliability HDF5 document files (*.oreh5)')]
         filename = self.fileSaveDialog(filters, _('Save as'))
         if filename:
             self.filename = filename
@@ -1017,7 +1017,7 @@ class MainWindow(qt4.QMainWindow):
             self.CreateWindow(filename)
 
     def loadDocument(self, filename):
-        """Load a Veusz document.
+        """Load an OpenReliability document.
         Return True if loaded ok
         """
 
@@ -1053,9 +1053,9 @@ class MainWindow(qt4.QMainWindow):
         try:
             # get loading mode
             ext = os.path.splitext(filename)[1].lower()
-            if ext in ('.vsz', '.py'):
-                mode = 'vsz'
-            elif ext in ('.h5', '.hdf5', '.he5', '.vszh5'):
+            if ext in ('.ore', '.py'):
+                mode = 'ore'
+            elif ext in ('.h5', '.hdf5', '.he5', '.oreh5'):
                 mode = 'hdf5'
             else:
                 raise document.LoadError(
@@ -1075,7 +1075,7 @@ class MainWindow(qt4.QMainWindow):
                 d.exec_()
             else:
                 qt4.QMessageBox.critical(
-                    self, _("Error opening %s - Veusz") % filename,
+                    self, _("Error opening %s - OpenReliability") % filename,
                     cstr(e))
             return False
 
@@ -1125,12 +1125,12 @@ class MainWindow(qt4.QMainWindow):
     def slotFileOpen(self):
         """Open an existing file in a new window."""
 
-        filters = ['*.vsz']
+        filters = ['*.ore']
         if h5py is not None:
-            filters.append('*.vszh5')
+            filters.append('*.oreh5')
 
         filename = self.fileOpenDialog(
-            [_('Veusz document files (%s)') % ' '.join(filters)],
+            [_('OpenReliability document files (%s)') % ' '.join(filters)],
             _('Open'))
         if filename:
             self.openFile(filename)
