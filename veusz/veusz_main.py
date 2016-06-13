@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+#    This file is part of the OpenReliability project.
 #    Copyright (C) 2016 Emmanuel Chery
 #    Email: Emmanuel Chery <emmanuel.chery@ams.com>
 #
@@ -60,7 +61,7 @@ def makeSplashLogo():
     '''Make a splash screen logo.'''
 
     splash = qt4.QSplashScreen()
-    splash.setStyleSheet("background-color:white;")
+    splash.setStyleSheet("background-color:azure;")
 
     # draw logo on pixmap
     layout = qt4.QVBoxLayout(splash)
@@ -194,9 +195,11 @@ class VeuszApp(qt4.QApplication):
             if isinstance(w, MainWindow) and w.document.isBlank():
                 emptywins.append(w)
 
-        if len(args) > 1:
+        # Detect OS type and adjust number of parameter after python call
+        startarg = 2 if sys.platform.startswith('win32') else 1
+        if len(args) > startarg:
             # load in filenames given
-            for filename in args[1:]:
+            for filename in args[startarg:]:
                 if not emptywins:
                     MainWindow.CreateWindow(filename)
                 else:

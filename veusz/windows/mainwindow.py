@@ -499,7 +499,7 @@ class MainWindow(qt4.QMainWindow):
                   None, checkable=True),
 
             'data.import':
-                a(self, _('Import data into Veusz'), _('&Import...'),
+                a(self, _('Import data into OpenReliability'), _('&Import...'),
                   self.slotDataImport, icon='kde-vzdata-import'),
             'data.edit':
                 a(self, _('Edit and enter new datasets'), _('&Editor...'),
@@ -525,16 +525,16 @@ class MainWindow(qt4.QMainWindow):
 
             'help.home':
                 a(self, _('Go to the OpenReliability home page on the internet'),
-                  _('Home page'), self.slotHelpHomepage),
+                  _('Home page'), self.slotHelpHomepage, icon='go-home-symbolic'),
             'help.project':
                 a(self, _('Go to the OpenReliability project page on the internet'),
                   _('GNA Project page'), self.slotHelpProjectPage),
             'help.bug':
                 a(self, _('Report a bug on the internet'),
-                  _('Suggestions and bugs'), self.slotHelpBug),
+                  _('Suggestions and bugs'), self.slotHelpBug, icon='computer-fail-symbolic'),
             'help.tutorial':
                 a(self, _('An interactive OpenReliability tutorial'),
-                  _('Tutorial'), self.slotHelpTutorial),
+                  _('Tutorial'), self.slotHelpTutorial, icon='help-browser-symbolic'),
             'help.about':
                 a(self, _('Displays information about the program'), _('About...'),
                   self.slotHelpAbout, icon='veusz')
@@ -605,6 +605,9 @@ class MainWindow(qt4.QMainWindow):
             'data.create2d', 'data.capture', 'data.filter', 'data.histogram',
             'data.reload',
             ]
+        statsmenu = [
+        
+            ]
         helpmenu = [
             'help.home', 'help.bug',
             '',
@@ -625,6 +628,7 @@ class MainWindow(qt4.QMainWindow):
             ['view', _('&View'), viewmenu],
             ['insert', _('&Insert'), insertmenu],
             ['data', _('&Data'), datamenu],
+            ['stats', _('&Stats'), statsmenu],
             ['tools', _('&Tools'), toolsmenu],
             ['help', _('&Help'), helpmenu],
             ]

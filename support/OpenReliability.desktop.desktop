@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=OpenReliability
+GenericName=Reliability data analysis
+GenericName[fr]=Analyse de données de fiabilité
+Comment=Reliability analysis and Scientific plotting
+Comment[fr]=Analyse de fiabilité et création de graphiques scientifiques
+MimeType=application/x-openreliability;
+Exec=OpenReliability %F
+Icon=veusz
+Terminal=false
+Type=Application
+Categories=DataVisualization;Science;
+Keywords=graphing;plotting;graph;plot;visualization;visualisation;science;math;maths;mathematics;data;
+Name[fr_FR]=OpenReliability.desktop
