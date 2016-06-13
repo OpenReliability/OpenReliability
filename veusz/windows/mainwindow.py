@@ -575,7 +575,7 @@ class MainWindow(qt4.QMainWindow):
             ]
         editmenu = [
             'edit.undo', 'edit.redo',
-            '',
+            'edit.bla',
             ['edit.select', _('&Select'), []],
             '',
             'edit.prefs', 'edit.stylesheet', 'edit.custom',
@@ -606,7 +606,7 @@ class MainWindow(qt4.QMainWindow):
             'data.reload',
             ]
         statsmenu = [
-        
+
             ]
         helpmenu = [
             'help.home', 'help.bug',

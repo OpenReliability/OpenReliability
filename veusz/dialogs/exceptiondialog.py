@@ -38,10 +38,10 @@ def _(text, disambiguation=None, context="ExceptionDialog"):
     """Translate text."""
     return qt4.QCoreApplication.translate(context, text, disambiguation)
 
-_emailUrl ='http://barmag.net/veusz-mail.php'
+_emailUrl = 'http://barmag.net/veusz-mail.php'
 
 _reportformat = \
-'''Veusz version: %s
+'''OpenReliability version: %s
 Python version: %s
 Python platform: %s
 Numpy version: %s
