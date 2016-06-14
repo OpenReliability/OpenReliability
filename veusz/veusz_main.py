@@ -48,7 +48,7 @@ Copyright (C) Emmanuel Chery 2016 <emmanuel.chery@ams.com>
 Licenced under the GNU General Public Licence (version 2 or greater)
 '''
 
-splashcopyr='''<b><font color="purple">OpenReliability %s<br></font></b>
+splashcopyr='''<b><font color="darkslategrey">OpenReliability %s<br></font></b>
 Copyright (C) Emmanuel Chery 2016<br>
 Licenced under the GPL (version 2 or greater)
 '''
@@ -61,7 +61,7 @@ def makeSplashLogo():
     '''Make a splash screen logo.'''
 
     splash = qt4.QSplashScreen()
-    splash.setStyleSheet("background-color:azure;")
+    splash.setStyleSheet("background-color:whitesmoke;")
 
     # draw logo on pixmap
     layout = qt4.QVBoxLayout(splash)

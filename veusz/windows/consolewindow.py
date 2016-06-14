@@ -140,9 +140,9 @@ class _CommandEdit(qt4.QLineEdit):
             text = self.history[ self.history_posn ]
             self.setText(text)
 
-introtext=_(u'''Welcome to <b><font color="purple">Veusz %s</font></b> --- a scientific plotting application.<br>
-Copyright \u00a9 2003-2016 Jeremy Sanders &lt;jeremy@jeremysanders.net&gt; and contributors.<br>
-Veusz comes with ABSOLUTELY NO WARRANTY. Veusz is Free Software, and you are<br>
+introtext=_(u'''Welcome to <b><font color="darkslategrey">OpenReliability %s</font></b> --- a microelectronic reliability data analysis software.<br>
+Copyright \u00a9 2016 Emmanuel Chery &lt;emmanuel.chery@ams.com&gt; <br>
+OpenReliability comes with ABSOLUTELY NO WARRANTY. OpenReliability is Free Software, and you are<br>
 welcome to redistribute it under certain conditions. Enter "GPL()" for details.<br>
 This window is a Python command line console and acts as a calculator.<br>
 ''') % utils.version()
@@ -190,7 +190,7 @@ class ConsoleWindow(qt4.QDockWidget):
         hlayout = qt4.QHBoxLayout(self._hbox)
         hlayout.setContentsMargins(0,0,0,0)
         vlayout.addWidget(self._hbox)
-        
+
         self._prompt = qt4.QLabel(">>>")
         hlayout.addWidget(self._prompt)
 
@@ -209,7 +209,7 @@ class ConsoleWindow(qt4.QDockWidget):
 
     def _makeTextFormat(self, cursor, color):
         fmt = cursor.charFormat()
-        
+
         if color is not None:
             brush = qt4.QBrush(color)
             fmt.setForeground(brush)
@@ -253,7 +253,7 @@ class ConsoleWindow(qt4.QDockWidget):
             i = sys.exc_info()
             backtrace = traceback.format_exception( *i )
             for l in backtrace:
-                sys.stderr.write(l)            
+                sys.stderr.write(l)
         self.document.enableUpdates()
 
         # return output streams
