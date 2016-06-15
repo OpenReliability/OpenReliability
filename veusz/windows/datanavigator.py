@@ -30,7 +30,7 @@ class DataNavigatorWindow(qt4.QDockWidget):
 
     def __init__(self, thedocument, mainwin, *args):
         qt4.QDockWidget.__init__(self, *args)
-        self.setWindowTitle(_("Data - Veusz"))
+        self.setWindowTitle(_("Data"))
         self.setObjectName("veuszdatawindow")
 
         self.nav = DatasetBrowser(thedocument, mainwin, self)

@@ -307,7 +307,7 @@ class PropertyList(qt4.QWidget):
         self.layout = qt4.QGridLayout(self)
         self.layout.setSpacing( self.layout.spacing()//2 )
         self.layout.setContentsMargins(4,4,4,4)
-        
+
         self.childlist = []
         self.setncntrls = {}     # map setting name to controls
 
@@ -544,7 +544,7 @@ class TabbedFormatting(qt4.QTabWidget):
                     pixmap = None
                 tabname = subset.name()
                 tooltip = title = subset.usertext()
-                
+
             # hide name in tab
             if not shownames:
                 tabname = ''
@@ -594,7 +594,7 @@ class FormatDock(qt4.QDockWidget):
 
     def __init__(self, document, treeedit, *args):
         qt4.QDockWidget.__init__(self, *args)
-        self.setWindowTitle(_("Formatting - Veusz"))
+        self.setWindowTitle(_("Formatting"))
         self.setObjectName("veuszformattingdock")
 
         self.document = document
@@ -629,7 +629,7 @@ class PropertiesDock(qt4.QDockWidget):
 
     def __init__(self, document, treeedit, *args):
         qt4.QDockWidget.__init__(self, *args)
-        self.setWindowTitle(_("Properties - Veusz"))
+        self.setWindowTitle(_("Properties"))
         self.setObjectName("veuszpropertiesdock")
 
         self.document = document
@@ -660,7 +660,7 @@ class TreeEditDock(qt4.QDockWidget):
         """Initialise dock given document and parent widget."""
         qt4.QDockWidget.__init__(self, parentwin)
         self.parentwin = parentwin
-        self.setWindowTitle(_("Editing - Veusz"))
+        self.setWindowTitle(_("Editing"))
         self.setObjectName("veuszeditingwindow")
         self.selwidgets = []
 
@@ -679,13 +679,13 @@ class TreeEditDock(qt4.QDockWidget):
         self.setWidget(self.treeview)
 
         # toolbar to create widgets
-        self.addtoolbar = qt4.QToolBar(_("Insert toolbar - Veusz"),
+        self.addtoolbar = qt4.QToolBar(_("Insert toolbar - OpenReliability"),
                                        parentwin)
         # note wrong description!: backwards compatibility
         self.addtoolbar.setObjectName("veuszeditingtoolbar")
 
         # toolbar for editting widgets
-        self.edittoolbar = qt4.QToolBar(_("Edit toolbar - Veusz"),
+        self.edittoolbar = qt4.QToolBar(_("Edit toolbar - OpenReliability"),
                                         parentwin)
         self.edittoolbar.setObjectName("veuszedittoolbar")
 
@@ -1001,7 +1001,7 @@ class TreeEditDock(qt4.QDockWidget):
 
         if name in parent.childnames:
             name = None
-        
+
         # make the new widget and update the document
         w = self.document.applyOperation(
             document.OperationWidgetAdd(parent, widgettype, autoadd=autoadd,
@@ -1067,7 +1067,7 @@ class TreeEditDock(qt4.QDockWidget):
         # get list of widgets in order
         widgetlist = []
         self.document.basewidget.buildFlatWidgetList(widgetlist)
-        
+
         # find indices of widgets to be deleted - find one to select after
         indexes = [widgetlist.index(w) for w in widgets]
         if -1 in indexes:
@@ -1135,7 +1135,7 @@ class TreeEditDock(qt4.QDockWidget):
             return
         # widget to move
         w = self.selwidgets[0]
-        
+
         # actually move the widget
         self.document.applyOperation(
             document.OperationWidgetMoveUpDown(w, direction) )
@@ -1185,7 +1185,7 @@ class TreeEditDock(qt4.QDockWidget):
                 self.treeview.selectionModel().select(
                     idx, qt4.QItemSelectionModel.Select |
                     qt4.QItemSelectionModel.Rows)
-                
+
     def updateSelectMenu(self):
         """Update edit.select menu."""
         menu = self.parentwin.menus['edit.select']
@@ -1227,13 +1227,13 @@ class SettingLabel(qt4.QWidget):
     This widget shows the name, a tooltip description, and gives
     access to the context menu
     """
-    
+
     # this is emitted when widget is clicked
     signalClicked = qt4.pyqtSignal(qt4.QPoint)
 
     def __init__(self, document, setting, setnsproxy):
         """Initialise button, passing document, setting, and parent widget."""
-        
+
         qt4.QWidget.__init__(self)
         self.setFocusPolicy(qt4.Qt.StrongFocus)
 
@@ -1252,7 +1252,7 @@ class SettingLabel(qt4.QWidget):
             text = setting.name
         self.labelicon = qt4.QLabel(text)
         self.layout.addWidget(self.labelicon)
-        
+
         self.iconlabel = qt4.QLabel()
         self.layout.addWidget(self.iconlabel)
 
@@ -1348,7 +1348,7 @@ class SettingLabel(qt4.QWidget):
                 if w.typename == widgettype:
                     widgets.append(w)
                 getWidgetsOfType(w, widgettype, widgets)
-        
+
         # get list of widget paths to copy setting to
         # this is all widgets of same type
         widgets = []

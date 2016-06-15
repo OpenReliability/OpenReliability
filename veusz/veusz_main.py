@@ -155,7 +155,7 @@ class VeuszApp(qt4.QApplication):
                           help='disable safety checks when running documents'
                           ' or scripts')
         parser.add_option('--listen', action='store_true',
-                          help='read and execute Veusz commands from stdin,'
+                          help='read and execute OpenReliability commands from stdin,'
                           ' replacing veusz_listen')
         parser.add_option('--quiet', action='store_true',
                           help='if in listening mode, do not open a window but'

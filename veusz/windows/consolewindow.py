@@ -152,7 +152,7 @@ class ConsoleWindow(qt4.QDockWidget):
 
     def __init__(self, thedocument, *args):
         qt4.QDockWidget.__init__(self, *args)
-        self.setWindowTitle(_("Console - Veusz"))
+        self.setWindowTitle(_("Console"))
         self.setObjectName("veuszconsolewindow")
 
         # arrange sub-widgets in a vbox
