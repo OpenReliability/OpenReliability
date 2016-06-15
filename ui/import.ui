@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Import data - Veusz</string>
+   <string>Import data - OpenReliability</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_4">
    <item>
@@ -82,7 +82,7 @@
            </sizepolicy>
           </property>
           <property name="toolTip">
-           <string>Data imported are not stored in the Veusz saved file, but are reloaded each time the Veusz file is opened, or Data-&amp;gt;Reload is selected on the menu</string>
+           <string>Data imported are not stored in the OpenReliability saved file, but are reloaded each time the OpenReliability file is opened, or Data-&amp;gt;Reload is selected on the menu</string>
           </property>
           <property name="text">
            <string>&amp;Link datasets to file</string>

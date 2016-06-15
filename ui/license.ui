@@ -10,7 +10,7 @@
    </rect>
   </property>
   <property name="windowTitle" >
-   <string>License - Veusz</string>
+   <string>License - OpenReliability</string>
   </property>
   <layout class="QVBoxLayout" >
    <property name="margin" >
@@ -22,7 +22,7 @@
    <item>
     <widget class="QGroupBox" name="groupBox" >
      <property name="title" >
-      <string>Veusz license</string>
+      <string>OpenReliability license</string>
      </property>
      <layout class="QVBoxLayout" >
       <property name="margin" >

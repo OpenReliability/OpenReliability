@@ -29,7 +29,7 @@
      <item>
       <widget class="QLabel" name="errorlabel">
        <property name="text">
-        <string>Veusz could not open the file '%s'. The following error occured:</string>
+        <string>OpenReliability could not open the file '%s'. The following error occured:</string>
        </property>
        <property name="wordWrap">
         <bool>true</bool>

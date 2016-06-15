@@ -72,7 +72,7 @@
         </item>
         <item>
          <property name="text">
-          <string>Veusz format (seconds since start of 2009)</string>
+          <string>OpenReliability format (seconds since start of 2009)</string>
          </property>
         </item>
         <item>

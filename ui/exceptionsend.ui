@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Send problem - Veusz</string>
+   <string>Send problem - OpenReliability</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -43,7 +43,7 @@
    <item>
     <widget class="QLabel" name="label_3">
      <property name="text">
-      <string>This is what Veusz will send:</string>
+      <string>This is what OpenReliability will send:</string>
      </property>
     </widget>
    </item>

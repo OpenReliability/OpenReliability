@@ -10,7 +10,7 @@
    </rect>
   </property>
   <property name="windowTitle" >
-   <string>Capturing data - Veusz</string>
+   <string>Capturing data - OpenReliability</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout" >
    <item>
