@@ -10,7 +10,7 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    id="svg7384"
-   sodipodi:docname="veusz-edit-prefs (copie).svg"
+   sodipodi:docname="veusz-edit-prefs.svg"
    version="1.1"
    inkscape:version="0.91 r13725"
    height="16.000008"
@@ -122,7 +122,7 @@
        inkscape:connector-curvature="0"
        d="m 445.54914,462.09056 c -0.39933,0 -0.78638,0.0916 -1.14329,0.21572 l 1.88488,1.87971 c 0.38735,0.38627 0.38735,1.00037 0,1.38667 l -0.71069,0.70874 c -0.38735,0.38628 -1.00314,0.38628 -1.39049,0 l -1.88488,-1.87971 c -0.12444,0.35591 -0.2163,0.74191 -0.2163,1.14015 0,1.90608 1.54944,3.45126 3.46077,3.45126 0.39933,0 0.78638,-0.0916 1.14329,-0.2157 l 1.17419,1.17097 c 0.0206,-2.6e-4 0.0412,-2.6e-4 0.0618,0 l 2.07028,-2.0646 -1.20509,-1.20178 c 0.12444,-0.35592 0.2163,-0.74191 0.2163,-1.14015 0,-1.90609 -1.54944,-3.45128 -3.46077,-3.45128 z m 4.44956,5.79321 -2.13208,2.0646 c 0.0109,0.0306 2.26152,2.2231 2.27121,2.2541 l 1.06595,1.07386 c -0.12444,0.35596 -0.2163,0.74196 -0.2163,1.14019 0,1.90609 1.54944,3.45129 3.46077,3.45129 0.43346,0 0.8536,-0.10141 1.23599,-0.24653 l -2.00848,-2.00297 c -0.38735,-0.38629 -0.38735,-1.03119 0,-1.41749 l 0.67979,-0.67792 c 0.19367,-0.19315 0.45794,-0.30816 0.71069,-0.30816 0.25276,0 0.51702,0.11501 0.7107,0.30816 l 1.94668,1.94133 c 0.10485,-0.32958 0.1854,-0.68351 0.1854,-1.04771 0,-1.90608 -1.54944,-3.45126 -3.46077,-3.45126 -0.39933,0 -0.78639,0.0916 -1.14329,0.2157 l -3.30626,-3.29719 z"
        id="path3908"
-       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:Sans;-inkscape-font-specification:Sans;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;display:inline;overflow:visible;visibility:visible;fill:#bebebe;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;marker:none;enable-background:accumulate"
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:Sans;-inkscape-font-specification:Sans;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:start;display:inline;overflow:visible;visibility:visible;fill:#666666;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;marker:none;enable-background:accumulate"
        sodipodi:nodetypes="scccsscsscccccssccccsscsccsscssccc" />
   </g>
   <g
