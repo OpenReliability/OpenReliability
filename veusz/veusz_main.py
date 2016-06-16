@@ -48,7 +48,7 @@ Copyright (C) Emmanuel Chery 2016 <emmanuel.chery@ams.com>
 Licenced under the GNU General Public Licence (version 2 or greater)
 '''
 
-splashcopyr='''<b><font color="darkslategrey">OpenReliability %s<br></font></b>
+splashcopyr='''<b><font color="SteelBlue">OpenReliability %s<br></font></b>
 Copyright (C) Emmanuel Chery 2016<br>
 Licenced under the GPL (version 2 or greater)
 '''

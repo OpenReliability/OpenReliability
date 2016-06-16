@@ -140,7 +140,7 @@ class _CommandEdit(qt4.QLineEdit):
             text = self.history[ self.history_posn ]
             self.setText(text)
 
-introtext=_(u'''Welcome to <b><font color="darkslategrey">OpenReliability %s</font></b> --- a microelectronic reliability data analysis software.<br>
+introtext=_(u'''Welcome to <b><font color="SteelBlue">OpenReliability %s</font></b> --- a microelectronic reliability data analysis software.<br>
 Copyright \u00a9 2016 Emmanuel Chery &lt;emmanuel.chery@ams.com&gt; <br>
 OpenReliability comes with ABSOLUTELY NO WARRANTY. OpenReliability is Free Software, and you are<br>
 welcome to redistribute it under certain conditions. Enter "GPL()" for details.<br>
