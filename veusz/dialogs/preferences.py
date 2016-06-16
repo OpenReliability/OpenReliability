@@ -223,14 +223,14 @@ class PreferencesDialog(VeuszDialog):
     def styleBrowseClicked(self):
         """Browse for a stylesheet."""
         filename = self.parent().fileOpenDialog(
-            [_('Veusz stylesheet (*.vst)')], _('Choose stylesheet'))
+            [_('OpenReliability stylesheet (*.orest)')], _('Choose stylesheet'))
         if filename:
             self.styleLineEdit.setText(filename)
 
     def customBrowseClicked(self):
         """Browse for a custom definitons."""
         filename = self.parent().fileOpenDialog(
-            [_('Veusz document (*.vsz)')], _('Choose custom definitons'))
+            [_('OpenReliability document (*.ore)')], _('Choose custom definitons'))
         if filename:
             self.customLineEdit.setText(filename)
 
