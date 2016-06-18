@@ -63,6 +63,13 @@ def makeSplashLogo():
     splash = qt4.QSplashScreen()
     splash.setStyleSheet("background-color:whitesmoke;")
 
+    # Center the spash screen
+    screen = qt4.QDesktopWidget().screenGeometry()
+    print(screen.width())
+    print(screen.height())
+    splash.move((screen.width()-400)/2, (screen.height()-200)/2)
+    # splash.setGeometry(5, 5, 100, 100)
+
     # draw logo on pixmap
     layout = qt4.QVBoxLayout(splash)
     pm = utils.getPixmap('logo.png')
