@@ -20,7 +20,6 @@ from .field import *
 from .datasetplugin import *
 from .importplugin import *
 from .toolsplugin import *
-from .votable import *
 
 # backward compatibility
 ImportDataset1D = Dataset1D

@@ -16,6 +16,7 @@ OpenReliability is a microelectronics reliability data analysis software.
  * numpy >= 1.0
   * http://numpy.scipy.org/
 
+
 #### Optional requirements:
 * h5py (optional for HDF5 support)
  * http://www.h5py.org/
@@ -28,8 +29,6 @@ OpenReliability is a microelectronics reliability data analysis software.
  * http://code.google.com/p/pyminuit/
 * dbus-python, for dbus interface
  * http://dbus.freedesktop.org/doc/dbus-python/
-* astropy (optional for VO table import)
- * http://www.astropy.org/
 * SAMPy or astropy >= 0.4 (optional for SAMP support)
  * http://pypi.python.org/pypi/sampy/
 
