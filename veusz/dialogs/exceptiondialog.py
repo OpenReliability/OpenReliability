@@ -16,7 +16,7 @@
 #    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ##############################################################################
 
-'''Dialog to pop up if an exception occurs in Veusz.
+'''Dialog to pop up if an exception occurs in OpenReliability.
 This allows the user to send a bug report in via email.'''
 
 from __future__ import division
@@ -107,7 +107,7 @@ class ExceptionSendDialog(VeuszDialog):
                                 'message=%s' % text)
         except:
             # something went wrong...
-            qt4.QMessageBox.critical(None, _("Veusz"),
+            qt4.QMessageBox.critical(None, _("OpenReliability"),
                                      _("Failed to connect to error server "
                                        "to send report. Is your internet "
                                        "connected?"))
@@ -201,7 +201,7 @@ class ExceptionDialog(VeuszDialog):
             self.okButton.hide()
 
     def checkVeuszVersion(self):
-        """See whether there is a later version of veusz and inform the
+        """See whether there is a later version of OpenReliability and inform the
         user."""
 
         try:
@@ -212,19 +212,19 @@ class ExceptionDialog(VeuszDialog):
             versions = []
 
         if not versions:
-            msg = _('Could not check the latest Veusz version')
+            msg = _('Could not check the latest OpenReliability version')
         else:
             vsort = sorted([[int(i) for i in v.split('.')] for v in versions])
             latest = '.'.join([str(x) for x in vsort[-1]])
 
             current = [int(i) for i in utils.version().split('.')]
             if current == vsort[-1]:
-                msg = _('You are running the latest released Veusz version')
+                msg = _('You are running the latest released OpenReliability version')
             elif current > vsort[-1]:
-                msg = _('You are running an unreleased Veusz version')
+                msg = _('You are running an unreleased OpenReliability version')
             else:
-                msg = (_('<b>Your current version of Veusz is old. '
-                         'Veusz %s is available.</b>') % latest)
+                msg = (_('<b>Your current version of OpenReliability is old. '
+                         'OpenReliability %s is available.</b>') % latest)
 
         self.veuszversionlabel.setText(msg)
 
