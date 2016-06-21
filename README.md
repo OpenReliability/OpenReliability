@@ -10,7 +10,7 @@ OpenReliability is a microelectronics reliability data analysis software.
   * http://www.python.org/
  * Qt >= 4.6 (free edition)
   * http://www.trolltech.com/products/qt/
- * PyQt >= 4.5 (SIP is required to be installed first)
+ * PyQt >= 5.0 (SIP is required to be installed first)
   * http://www.riverbankcomputing.co.uk/software/pyqt/
   * http://www.riverbankcomputing.co.uk/software/sip/
  * numpy >= 1.0

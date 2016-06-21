@@ -1,11 +1,8 @@
 # about dialog box
 # aboutdialog.py
 
-#    Copyright (C) 2016 Emmanuel Chery
-#    Email: Emmanuel Chery <emmanuel.chery@ams.com>
-#
-#    Adapted from the Veusz project distributed under the GPL v2 or higher
-#    by Jeremy Sanders <jeremy@jeremysanders.net>
+#    Copyright (C) 2006 Jeremy S. Sanders
+#    Email: Jeremy Sanders <jeremy@jeremysanders.net>
 #
 #    This program is free software; you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
@@ -50,7 +47,7 @@ class AboutDialog(VeuszDialog):
     def licenseClicked(self):
         """Show the license."""
         LicenseDialog(self).exec_()
-
+        
 class LicenseDialog(VeuszDialog):
     """About license dialog."""
 

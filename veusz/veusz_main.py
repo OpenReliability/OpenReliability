@@ -4,8 +4,8 @@
 #    Copyright (C) 2016 Emmanuel Chery
 #    Email: Emmanuel Chery <emmanuel.chery@ams.com>
 #
-#    Adapted from the Veusz project distributed under the GPL v2 or higher
-#    by Jeremy Sanders <jeremy@jeremysanders.net>
+#    Based on the veusz project released under GPLv2 by Jeremy Sanders
+#    Email: Jeremy Sanders <jeremy@jeremysanders.net>
 #
 #    This program is free software; you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
@@ -30,7 +30,7 @@ import os.path
 import signal
 import optparse
 
-# trick to make sure veusz is on the path, if being run as a script
+# trick to make sure OpenReliability is on the path, if being run as a script
 try:
     import veusz
 except ImportError:
@@ -44,12 +44,12 @@ from veusz import utils
 
 copyr='''OpenReliability %s
 
-Copyright (C) Emmanuel Chery 2016 <emmanuel.chery@ams.com>
+Copyright (C) Emmanuel Chery 2016
 Licenced under the GNU General Public Licence (version 2 or greater)
 '''
 
 splashcopyr='''<b><font color="SteelBlue">OpenReliability %s<br></font></b>
-Copyright (C) Emmanuel Chery 2016<br>
+Copyright (C) Emmanuel Chery 2016 and contributors<br>
 Licenced under the GPL (version 2 or greater)
 '''
 
@@ -154,7 +154,7 @@ class VeuszApp(qt4.QApplication):
 
         # parse command line options
         parser = optparse.OptionParser(
-            usage='%prog [options] filename.vsz ...',
+            usage='%prog [options] filename.ore ...',
             version=copyr % utils.version())
         parser.add_option('--unsafe-mode', action='store_true',
                           help='disable safety checks when running documents'

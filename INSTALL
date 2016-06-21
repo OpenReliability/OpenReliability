@@ -36,11 +36,11 @@ list a few of the possible method here:
 
 To install on linux to the standard location on the hard disk
 
-# cd OpenReliability
+# cd veusz-1.23.2
 # python setup.py build
 # su
 [enter root password]
-# python setup.py install
+# python setup.py install 
 # exit
 
 If you do not have a root account (as is default on Ubuntu), do
@@ -80,7 +80,7 @@ the setup.py option "--veusz-resource-dir" (for example with
 these resources are on runtime or when testing. This can be done by
 using a symlink "resources" in the the OpenReliability module directory which
 points to the location of these files and directories. Alternatively,
-the environment variable VEUSZ_RESOURCE_DIR can be set.
+the environment variable veusz_RESOURCE_DIR can be set.
 
 There is an addition setup.py option "--disable-install-examples"
 which disables installation of the example files. This may be helpful
@@ -129,7 +129,7 @@ module.
 
 2.3 Installing on Mac OS X
 ==========================
-A binary is available for Mac OS X. Simply drag the Veusz application
+A binary is available for Mac OS X. Simply drag the OpenReliability application
 into your Applications directory.
 
 3. NOTES FOR PACKAGERS
@@ -153,5 +153,5 @@ into your Applications directory.
   with desktop environments.
 
 - Icons are also included in the icons directory with the names
-  veusz_16.png, _32, _48, _64 and _128. A scalable icon can be found
-  in veusz.svg.
+  OpenReliability_16.png, _32, _48, _64 and _128. A scalable icon can be found
+  in OpenReliability.svg.

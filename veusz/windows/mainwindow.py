@@ -116,7 +116,7 @@ class MainWindow(qt4.QMainWindow):
         self.setAcceptDrops(True)
 
         # icon and different size variations
-        self.setWindowIcon( utils.getIcon('veusz') ) # TO BE CHANGED
+        self.setWindowIcon( utils.getIcon('OpenReliability_32') )
 
         # master documenent
         self.document = document.Document()
@@ -248,7 +248,7 @@ class MainWindow(qt4.QMainWindow):
                     self.CreateWindow(filename)
 
     def _getVeuszDropFiles(self, event):
-        """Return a list of veusz files from a drag/drop event containing a
+        """Return a list of OpenReliability files from a drag/drop event containing a
         text/uri-list"""
 
         mime = event.mimeData()
@@ -257,7 +257,7 @@ class MainWindow(qt4.QMainWindow):
         else:
             # get list of vsz files dropped
             urls = [u.path() for u in mime.urls()]
-            urls = [u for u in urls if os.path.splitext(u)[1] == '.vsz'] # TO BE MODIFIED
+            urls = [u for u in urls if os.path.splitext(u)[1] == '.ore']
             return urls
 
     def setupDefaultDoc(self):
@@ -537,7 +537,7 @@ class MainWindow(qt4.QMainWindow):
                   _('Tutorial'), self.slotHelpTutorial, icon='help-browser-symbolic'),
             'help.about':
                 a(self, _('Displays information about the program'), _('About...'),
-                  self.slotHelpAbout, icon='veusz')
+                  self.slotHelpAbout, icon='OpenReliability')
             }
 
         # create main toolbar
@@ -607,13 +607,13 @@ class MainWindow(qt4.QMainWindow):
             ]
         statsmenu = [
 
-            ]
+        ]
         helpmenu = [
             'help.home', 'help.bug',
             '',
             'help.tutorial',
             '',
-            #['help.examples', _('&Example documents'), []],
+            # ['help.examples', _('&Example documents'), []],
             '',
             'help.about'
             ]
@@ -636,7 +636,7 @@ class MainWindow(qt4.QMainWindow):
         self.menus = {}
         utils.constructMenus(self.menuBar(), self.menus, menus, self.vzactions)
 
-        #self.populateExamplesMenu()
+        # self.populateExamplesMenu()
 
     def _setPickerFont(self, label):
         f = label.font()
@@ -779,16 +779,16 @@ class MainWindow(qt4.QMainWindow):
 
     def slotHelpHomepage(self):
         """Go to the OpenReliability homepage."""
-        qt4.QDesktopServices.openUrl(qt4.QUrl('https://github.com/KDB2/OpenReliability'))
+        qt4.QDesktopServices.openUrl(qt4.QUrl('https://github.com/OpenReliability/OpenReliability'))
 
     def slotHelpProjectPage(self):
         """Go to the OpenReliability project page."""
-        qt4.QDesktopServices.openUrl(qt4.QUrl('https://github.com/KDB2/OpenReliability'))
+        qt4.QDesktopServices.openUrl(qt4.QUrl('https://github.com/OpenReliability/OpenReliability'))
 
     def slotHelpBug(self):
         """Go to the OpenReliability bug page."""
         qt4.QDesktopServices.openUrl(
-            qt4.QUrl('https://github.com/KDB2/OpenReliability/issues') )
+            qt4.QUrl('https://github.com/OpenReliability/OpenReliability/issues') )
 
     def askTutorial(self):
         """Ask if tutorial wanted."""
@@ -804,7 +804,7 @@ class MainWindow(qt4.QMainWindow):
             self.slotHelpTutorial()
 
     def slotHelpTutorial(self):
-        """Show an OpenReliability tutorial."""
+        """Show a OpenReliability tutorial."""
         if self.document.isBlank():
             # run the tutorial
             from .tutorial import TutorialDock

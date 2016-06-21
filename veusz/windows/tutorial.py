@@ -1,7 +1,4 @@
 # -*- coding: utf-8 -*-
-#    This file is part of the OpenReliability project.
-#
-#    This software is based on Veusz, released under GPL by Jeremy Sanders
 #    Copyright (C) 2011 Jeremy S. Sanders
 #    Email: Jeremy Sanders <jeremy@jeremysanders.net>
 #

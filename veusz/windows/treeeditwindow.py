@@ -679,13 +679,13 @@ class TreeEditDock(qt4.QDockWidget):
         self.setWidget(self.treeview)
 
         # toolbar to create widgets
-        self.addtoolbar = qt4.QToolBar(_("Insert toolbar - OpenReliability"),
+        self.addtoolbar = qt4.QToolBar(_("Insert toolbar"),
                                        parentwin)
         # note wrong description!: backwards compatibility
         self.addtoolbar.setObjectName("veuszeditingtoolbar")
 
         # toolbar for editting widgets
-        self.edittoolbar = qt4.QToolBar(_("Edit toolbar - OpenReliability"),
+        self.edittoolbar = qt4.QToolBar(_("Edit toolbar"),
                                         parentwin)
         self.edittoolbar.setObjectName("veuszedittoolbar")
 
@@ -848,7 +848,8 @@ class TreeEditDock(qt4.QDockWidget):
                            'key', 'label', 'colorbar',
                            'rect', 'ellipse', 'imagefile',
                            'line', 'polygon', 'polar', 'ternary',
-                           'nonorthpoint', 'nonorthfunc'):
+                           'nonorthpoint', 'nonorthfunc',
+                           'covariance'):
 
             wc = document.thefactory.getWidgetClass(widgettype)
             slot = slotklass(wc)
@@ -925,6 +926,7 @@ class TreeEditDock(qt4.QDockWidget):
             'add.colorbar',
             'add.polar',
             'add.ternary',
+            'add.covariance',
             'add.shapemenu',
             )
 
