@@ -232,13 +232,13 @@ class MainWindow(qt4.QMainWindow):
     def dragEnterEvent(self, event):
         """Check whether event is valid to be dropped."""
         if (event.provides("text/uri-list") and
-            self._getVeuszDropFiles(event)):
+            self._getOpenReliabilityDropFiles(event)):
             event.acceptProposedAction()
 
     def dropEvent(self, event):
         """Respond to a drop event on the current window"""
         if event.provides("text/uri-list"):
-            files = self._getVeuszDropFiles(event)
+            files = self._getOpenReliabilityDropFiles(event)
             if files:
                 if self.document.isBlank():
                     self.openFileInWindow(files[0])
@@ -247,7 +247,7 @@ class MainWindow(qt4.QMainWindow):
                 for filename in files[1:]:
                     self.CreateWindow(filename)
 
-    def _getVeuszDropFiles(self, event):
+    def _getOpenReliabilityDropFiles(self, event):
         """Return a list of OpenReliability files from a drag/drop event containing a
         text/uri-list"""
 
