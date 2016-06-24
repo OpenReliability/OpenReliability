@@ -102,9 +102,9 @@ class StylesheetDialog(VeuszDialog):
 
     def slotSaveStyleSheet(self):
         """Save stylesheet as a file."""
-    
+
         filename = self.parent().fileSaveDialog(
-            [_('Veusz stylesheet (*.vst)')], _('Save stylesheet'))
+            [_('OpenReliability stylesheet (*.orest)')], _('Save stylesheet'))
         if filename:
             try:
                 f = open(filename, 'w')
@@ -114,20 +114,20 @@ class StylesheetDialog(VeuszDialog):
 
             except EnvironmentError as e:
                 qt4.QMessageBox.critical(
-                    self, _("Error - Veusz"),
+                    self, _("Error - OpenReliability"),
                     _("Unable to save '%s'\n\n%s") % (
                         filename, cstrerror(e)))
 
     def slotLoadStyleSheet(self):
         """Load a style sheet."""
         filename = self.parent().fileOpenDialog(
-            [_('Veusz stylesheet (*.vst)')], _('Load stylesheet'))
+            [_('OpenReliability stylesheet (*.orest)')], _('Load stylesheet'))
         if filename:
             try:
                 self.loadStyleSheet(filename)
             except EnvironmentError as e:
                 qt4.QMessageBox.critical(
-                    self, _("Error - Veusz"),
+                    self, _("Error - OpenReliability"),
                     _("Unable to load '%s'\n\n%s") % (
                         filename, cstrerror(e)))
             else:
