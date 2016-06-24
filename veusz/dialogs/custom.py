@@ -245,7 +245,7 @@ class CustomDialog(VeuszDialog):
     def slotSave(self):
         """Save entries."""
         filename = self.parent().fileSaveDialog(
-            [_('Veusz document (*.vsz)')], _('Save custom definitions'))
+            [_('OpenReliability document (*.ore)')], _('Save custom definitions'))
         if filename:
             try:
                 f = open(filename, 'w')
@@ -254,7 +254,7 @@ class CustomDialog(VeuszDialog):
                 self.recentButton.addFile(filename)
             except EnvironmentError as e:
                 qt4.QMessageBox.critical(
-                    self, _("Error - Veusz"),
+                    self, _("Error - OpenReliability"),
                     _("Unable to save '%s'\n\n%s") % (
                         filename, cstrerror(e)))
 
@@ -262,13 +262,13 @@ class CustomDialog(VeuszDialog):
         """Load entries."""
 
         filename = self.parent().fileOpenDialog(
-            [_('Veusz document (*.vsz)')], _('Load custom definitions'))
+            [_('OpenReliability document (*.ore)')], _('Load custom definitions'))
         if filename:
             try:
                 self.loadFile(filename)
             except EnvironmentError as e:
                 qt4.QMessageBox.critical(
-                    self, _("Error - Veusz"),
+                    self, _("Error - OpenReliability"),
                     _("Unable to load '%s'\n\n%s") % (
                             filename, cstrerror(e)))
             else:
