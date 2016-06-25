@@ -26,7 +26,7 @@ Requires: PyQt-x11-gpl-4.6-snapshot-20090906.tar.gz
 from __future__ import division
 import struct
 
-import pyemf
+from . import pyemf
 from .. import qtall as qt4
 
 inch_mm = 25.4
@@ -51,7 +51,7 @@ class _EXTCREATEPEN(pyemf._EMR._EXTCREATEPEN):
         ('i','color'),
         ('i','brushhatch',0),
         ('i','numstyleentries')]
-    
+
     def __init__(self, style=pyemf.PS_SOLID, width=1, color=0,
                  styleentries=[]):
         """Create pen.
