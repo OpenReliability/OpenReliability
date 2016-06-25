@@ -18,7 +18,7 @@
 
 """Contour plotting from 2d datasets.
 
-Contour plotting requires that the veusz_helpers package is installed,
+Contour plotting requires that the OpenReliability_helpers package is installed,
 as a C routine (taken from matplotlib) is used to trace the contours.
 """
 
@@ -102,7 +102,7 @@ class ContourFills(setting.Settings):
                                descr = _('Hide fills'),
                                usertext = _('Hide'),
                                formatting = True) )
-        
+
 class ContourLines(setting.Settings):
     """Settings for contour lines."""
     def __init__(self, name, **args):
@@ -170,10 +170,10 @@ class Contour(plotters.GenericPlotter):
         plotters.GenericPlotter.__init__(self, parent, name=name)
 
         if Cntr is None:
-            print(('WARNING: Veusz cannot import contour module\n'
+            print(('WARNING: OpenReliability cannot import contour module\n'
                                 'Please run python setup.py build\n'
                                 'Contour support is disabled'), file=sys.stderr)
-            
+
         # keep track of settings so we recalculate when necessary
         self.lastdataset = None
         self.contsettings = None
@@ -307,7 +307,7 @@ class Contour(plotters.GenericPlotter):
             if minval == maxval:
                 minval = 0.
                 maxval = 1.
-                
+
             # calculate levels for each scaling
             if scaling == 'linear':
                 delta = (maxval - minval) / (numlevels-1)
@@ -554,7 +554,7 @@ class Contour(plotters.GenericPlotter):
                 # convert coordinates from graph to plotter
                 xplt = axes[0].dataToPlotterCoords(posn, curve[:,0])
                 yplt = axes[1].dataToPlotterCoords(posn, curve[:,1])
-                    
+
                 pts = qt4.QPolygonF()
                 utils.addNumpyToPolygonF(pts, xplt, yplt)
                 linelabeller.addLine(pts, textdims)

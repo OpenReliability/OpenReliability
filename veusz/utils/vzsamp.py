@@ -79,9 +79,9 @@ if SM:
 
         try:
             icon = 'file:///' + '/'.join([resourceDirectory,
-                                          'icons', 'veusz_16.png'])
+                                          'icons', 'OpenReliability_16.png'])
 
-            samp = SAMPIntegratedClient(metadata={'samp.name': 'Veusz',
+            samp = SAMPIntegratedClient(metadata={'samp.name': 'OpenReliability',
                                                   'samp.icon.url': icon})
             samp.connect()
 

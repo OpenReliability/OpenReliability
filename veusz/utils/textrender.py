@@ -41,7 +41,7 @@ try:
 except ImportError:
     from .slowfuncs import RotatedRectangle
 
-# this definition is monkey-patched when veusz is running in self-test
+# this definition is monkey-patched when OpenReliability is running in self-test
 # mode as we need to hack the metrics - urgh
 FontMetrics = qt4.QFontMetricsF
 

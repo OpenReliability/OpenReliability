@@ -705,7 +705,7 @@ distre_expr = r'''^
 $'''
 
 class Distance(Setting):
-    """A veusz distance measure, e.g. 1pt or 3%."""
+    """A OpenReliability distance measure, e.g. 1pt or 3%."""
 
     typename = 'distance'
 
@@ -1324,7 +1324,7 @@ class DatasetExtended(Dataset):
         return self.val == [] or self.val == ''
 
     def getData(self, doc):
-        """Return veusz dataset"""
+        """Return OpenReliability dataset"""
         if isinstance(self.val, cbasestr):
             return doc.evalDatasetExpression(
                 self.val, datatype=self.datatype, dimensions=self.dimensions)

@@ -20,7 +20,7 @@
 ##############################################################################
 
 """
-Return Veusz' version number
+Return OpenReliability' version number
 """
 
 from __future__ import division

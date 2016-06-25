@@ -175,7 +175,7 @@ def formatEngineering(num, fmtarg, locale=None):
         text = text.replace('.', locale.decimalPoint())
     return text
 
-# catch general veusz formatting expression
+# catch general OpenReliability formatting expression
 _formatRE = re.compile(r'%([-0-9.+# ]*)(VDVS|VD.|V.|[A-Za-z%])')
 
 def formatNumber(num, formatstr, locale=None):
@@ -202,9 +202,9 @@ def formatNumber(num, formatstr, locale=None):
         # argument and type of formatting
         farg, ftype = match.groups()
 
-        # special veusz formatting
+        # special OpenReliability formatting
         if ftype[:1] == 'V':
-            # special veusz formatting
+            # special OpenReliability formatting
             if ftype == 'Ve':
                 out = formatSciNotation(num, farg, locale=locale)
             elif ftype == 'Vg':
@@ -243,4 +243,3 @@ def formatNumber(num, formatstr, locale=None):
         formatstr = formatstr[match.end():]
 
     return ''.join(outitems)
-

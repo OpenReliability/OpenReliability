@@ -131,7 +131,7 @@ class ControlMarginBox(object):
         top = self.posn[1] - self.maxposn[1]
         bottom = self.maxposn[3] - self.posn[3]
 
-        # set up fake painthelper containing veusz scalings
+        # set up fake painthelper containing OpenReliability scalings
         helper = document.PaintHelper(self.pagesize, scaling=self.scaling,
                                       dpi=self.dpi)
 
@@ -162,7 +162,7 @@ class ControlMarginBox(object):
         width = self.posn[2] - self.posn[0]
         height = self.posn[3] - self.posn[1]
 
-        # set up fake painter containing veusz scalings
+        # set up fake painter containing OpenReliability scalings
         helper = document.PaintHelper(self.pagesize, scaling=self.scaling,
                                       dpi=self.dpi)
 
@@ -301,7 +301,7 @@ class _GraphMarginBox(qt4.QGraphicsItem):
             self.corners[1], self.corners[3] = self.corners[3], self.corners[1]
 
         self.updateCornerPosns()
-        
+
     def boundingRect(self):
         return qt4.QRectF(0, 0, 0, 0)
 
@@ -728,4 +728,3 @@ class _GraphAxisLine(qt4.QGraphicsItem):
 
     def paint(self, painter, option, widget):
         """Intentionally empty painter."""
-

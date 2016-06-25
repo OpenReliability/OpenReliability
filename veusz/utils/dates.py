@@ -82,7 +82,7 @@ def _isoDataStringToDate(datestr):
     return val
 
 def dateStringToDate(datestr):
-    """Interpret a date string and return a Veusz-format date value."""
+    """Interpret a date string and return a OpenReliability-format date value."""
     dt = _isoDataStringToDate(datestr)
     if dt is None:
         # try local conversions (time, date and variations)
@@ -102,7 +102,7 @@ def dateStringToDate(datestr):
         return N.nan
 
 def floatUnixToVeusz(f):
-    """Convert unix float to veusz float."""
+    """Convert unix float to OpenReliability float."""
     delta = datetime.datetime(1970,1,1) - offsetdate
     return f + delta.total_seconds()
 
@@ -151,13 +151,13 @@ def addTimeTupleToDateTime(dt,  tt):
     """
 
     # add on most of the time intervals
-    dt = dt + datetime.timedelta(days=tt[2], hours=tt[3], 
-                                 minutes=tt[4], seconds=tt[5], 
+    dt = dt + datetime.timedelta(days=tt[2], hours=tt[3],
+                                 minutes=tt[4], seconds=tt[5],
                                  microseconds=tt[6])
 
     # add on years
     dt = dt.replace(year=dt.year + tt[0])
-    
+
     # add on months - this could be much simpler
     if tt[1] > 0:
         for i in crange(tt[1]):
@@ -165,7 +165,7 @@ def addTimeTupleToDateTime(dt,  tt):
             m, y = dt.month + 1, dt.year
             if m == 13:
                 m = 1
-                y += 1          
+                y += 1
             dt = dt.replace(year=y, month=m)
     elif tt[1] < 0:
         for i in crange(abs(tt[1])):
@@ -173,9 +173,9 @@ def addTimeTupleToDateTime(dt,  tt):
             m, y = dt.month - 1, dt.year
             if m == 0:
                 m = 12
-                y -= 1          
+                y -= 1
             dt = dt.replace(year=y, month=m)
-        
+
     return dt
 
 def roundDownToTimeTuple(dt,  tt):
@@ -196,7 +196,7 @@ def roundDownToTimeTuple(dt,  tt):
         timein[i] == ((timein[i]-1) // tt[i])*tt[i] + 1
     else:
         timein[i] = (timein[i] // tt[i])*tt[i]
-        
+
     #print "rounded",  timein
     return tuple(timein)
 
@@ -295,5 +295,5 @@ def dateREMatchToDate(match):
     d = datetime.datetime(
         oyear, omon, oday, ohour, omin, osec, omicrosec)
 
-    # return to veusz float time
+    # return to OpenReliability float time
     return datetimeToFloat(d)

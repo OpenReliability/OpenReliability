@@ -43,7 +43,7 @@ class InvalidType(Exception):
     """Exception used when invalid values are used in settings."""
 
 def _getVeuszDirectory():
-    """Get resource and examples directories for Veusz."""
+    """Get resource and examples directories for OpenReliability."""
 
     if hasattr(sys, 'frozen'):
         # for pyinstaller/py2app compatability
@@ -164,7 +164,7 @@ def pythonise(text):
     to make it easier for users. We also have to take account of quotes
     and backslashes.
     """
-    
+
     out = ''
     insingle = False    # in a single quote section
     indouble = False    # in a double quote section

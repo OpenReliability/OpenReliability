@@ -29,7 +29,7 @@ except ImportError:
 
 from . import colormap
 
-"""This is the symbol plotting part of Veusz
+"""This is the symbol plotting part of OpenReliability
 
 There are actually several different ways symbols are plotted.
 We choose the most appropriate one for the shape:
@@ -420,7 +420,7 @@ def plotMarkers(painter, xpos, ypos, markername, markersize, scaling=None,
     # minor optimization
     if markername == 'none':
         return
-    
+
     painter.save()
 
     # get sharper angles and more exact positions using these settings
@@ -485,7 +485,7 @@ def plotLineArrow(painter, xpos, ypos, length, angle,
                   arrowsize=0,
                   arrowleft='none', arrowright='none'):
     """Plot a line or arrow.
-    
+
     xpos, ypos is the starting point of the line
     angle is the angle to the horizontal (degrees)
     arrowleft and arrowright are arrow codes."""
@@ -499,12 +499,12 @@ def plotLineArrow(painter, xpos, ypos, length, angle,
                       qt4.QPointF(length, 0.) )
 
     # plot marker at one end of line
-    plotMarker(painter, length, 0., 
+    plotMarker(painter, length, 0.,
                arrow_translate[arrowright], arrowsize)
 
     # plot reversed marker at other end
     painter.scale(-1, 1)
-    plotMarker(painter, 0., 0., 
+    plotMarker(painter, 0., 0.,
                arrow_translate[arrowleft], arrowsize)
 
     painter.restore()

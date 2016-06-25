@@ -260,7 +260,7 @@ class ImageFile(BoxShape):
         self.cacheembeddata = None
 
         self.addAction( widget.Action('embed', self.actionEmbed,
-                                      descr = _('Embed image in Veusz document '
+                                      descr = _('Embed image in OpenReliability document '
                                                 'to remove dependency on external file'),
                                       usertext = _('Embed image')) )
 
@@ -289,7 +289,7 @@ class ImageFile(BoxShape):
         s.Border.get('hide').newDefault(True)
 
     def actionEmbed(self):
-        """Embed external image into veusz document."""
+        """Embed external image into OpenReliability document."""
 
         s = self.settings
 

@@ -20,7 +20,7 @@
 
 from __future__ import division
 
-# interface name veusz interfaces appear on
+# interface name OpenReliability interfaces appear on
 sessionbus = busname = None
 
 try:
