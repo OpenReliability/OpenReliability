@@ -29,12 +29,7 @@ from ..compat import crange
 from .. import qtall as qt4
 from .. import utils
 
-try:
-    from . import emf_export
-    hasemf = True
-except ImportError:
-    hasemf = False
-
+from . import emf_export
 from . import svg_export
 from . import selftest_export
 from . import painthelper
@@ -134,6 +129,7 @@ class Export(object):
 
     formats = [
         (["bmp"], _("Windows bitmap")),
+        (["emf"], _("Windows Enhanced Metafile")),
         (["eps"], _("Encapsulated Postscript")),
         (["ps"], _("Postscript")),
         (["jpg"], _("Jpeg bitmap")),
@@ -144,10 +140,6 @@ class Export(object):
         (["tiff"], _("Tagged Image File Format bitmap")),
         (["xpm"], _("X Pixmap")),
         ]
-
-    if hasemf:
-        formats.append( (["emf"], _("Windows Enhanced Metafile")) )
-        formats.sort()
 
     def __init__(self, doc, filename, pagenumber, color=True, bitmapdpi=100,
                  antialias=True, quality=85, backcolor='#ffffff00',
@@ -196,7 +188,7 @@ class Export(object):
         elif ext == '.pic':
             self.exportPIC()
 
-        elif ext == '.emf' and hasemf:
+        elif ext == '.emf':
             self.exportEMF()
 
         else:
