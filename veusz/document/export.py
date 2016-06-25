@@ -128,7 +128,7 @@ def fixupPSBoundingBox(infname, outfname, pagewidth, size):
 
 class Export(object):
     """Class to do the document exporting.
-    
+
     This is split from document to make that class cleaner.
     """
 
@@ -302,7 +302,7 @@ class Export(object):
             qt4.QPrinter.PdfFormat if ext=='.pdf' else
             qt4.QPrinter.PostScriptFormat)
         printer.setOutputFileName(self.filename)
-        printer.setCreator('Veusz %s' % utils.version())
+        printer.setCreator('OpenReliability %s' % utils.version())
 
         # convert page to list if necessary
         try:
@@ -402,13 +402,13 @@ def printDialog(parentwindow, document, filename=None):
     """Open a print dialog and print document."""
 
     if document.getNumberPages() == 0:
-        qt4.QMessageBox.warning(parentwindow, _("Error - Veusz"),
+        qt4.QMessageBox.warning(parentwindow, _("Error - OpenReliability"),
                                 _("No pages to print"))
         return
 
     prnt = qt4.QPrinter(qt4.QPrinter.HighResolution)
     prnt.setColorMode(qt4.QPrinter.Color)
-    prnt.setCreator(_('Veusz %s') % utils.version())
+    prnt.setCreator(_('OpenReliability %s') % utils.version())
     if filename:
         prnt.setDocName(filename)
 
