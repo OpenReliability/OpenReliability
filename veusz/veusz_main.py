@@ -255,9 +255,8 @@ class VeuszApp(qt4.QApplication):
         options = self.options
         args = self.args
 
-        from veusz.utils import vzdbus, vzsamp
+        from veusz.utils import vzdbus
         vzdbus.setup()
-        vzsamp.setup()
 
         from veusz import document
         from veusz import setting
