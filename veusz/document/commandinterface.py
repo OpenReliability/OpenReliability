@@ -1,6 +1,6 @@
 # commandinterface.py
 # this module supplies the command line interface for plotting
- 
+
 #    Copyright (C) 2004 Jeremy S. Sanders
 #    Email: Jeremy Sanders <jeremy@jeremysanders.net>
 #
@@ -70,7 +70,6 @@ class CommandInterface(qt4.QObject):
         'GetData',
         'GetDataType',
         'GetDatasets',
-        'ImportFITSFile',
         'List',
         'NodeChildren',
         'NodeType',
@@ -99,7 +98,7 @@ class CommandInterface(qt4.QObject):
 
     # commands which can modify disk, etc
     unsafe_commands = (
-        'Export',        
+        'Export',
         'Print',
         'Save',
         )
@@ -226,7 +225,7 @@ class CommandInterface(qt4.QObject):
     def CloneWidget(self, widget, newparent, newname=None):
         """Clone the widget given, placing the copy in newparent and
         the name given.
-        
+
         newname is an optional new name to give it
 
         Returns new widget path
@@ -389,7 +388,7 @@ class CommandInterface(qt4.QObject):
 
         op = operations.OperationSettingSet(pref, val)
         self.document.applyOperation(op)
-        
+
         if self.verbose:
             print( _("Set setting '%s' to %s") % (var, repr(pref.get())) )
 
@@ -399,7 +398,7 @@ class CommandInterface(qt4.QObject):
         pref = self.currentwidget.prefLookup(var)
         op = operations.OperationSettingSet(pref, setting.Reference(val))
         self.document.applyOperation(op)
-        
+
         if self.verbose:
             print( _( "Set setting '%s' to %s") % (var, repr(pref.get())) )
 
@@ -409,7 +408,7 @@ class CommandInterface(qt4.QObject):
         data = datasets.Dataset(val, symerr, negerr, poserr)
         op = operations.OperationDatasetSet(name, data)
         self.document.applyOperation(op)
- 
+
         if self.verbose:
             print(
                 _("Set dataset '%s':\n"
@@ -446,7 +445,7 @@ class CommandInterface(qt4.QObject):
         are used, and so on.
         To access a specific part of the dataset y, the suffixes _data, _serr, _perr,
         and _nerr can be appended.
-        
+
         If linked is True then the expressions are reevaluated if the document
         is modified
 
@@ -460,7 +459,7 @@ class CommandInterface(qt4.QObject):
                                                          parametric=parametric)
 
         data = self.document.applyOperation(op)
-        
+
         if self.verbose:
             print(
                 _("Set dataset '%s' based on expression:\n"
@@ -489,7 +488,7 @@ class CommandInterface(qt4.QObject):
         op = operations.OperationDatasetCreateRange(name, numsteps, parts,
                                                     linked)
         self.document.applyOperation(op)
-        
+
         if self.verbose:
             print(
                 _("Set dataset '%s' based on range:\n"
@@ -707,7 +706,7 @@ class CommandInterface(qt4.QObject):
     def Print(self):
         """Print document."""
         export.printDialog(None, self.document)
-            
+
     def Export(self, filename, color=True, page=0, dpi=100,
                antialias=True, quality=85, backcolor='#ffffff00',
                pdfdpi=150, svgtextastext=False):

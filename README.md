@@ -20,9 +20,6 @@ OpenReliability is a microelectronics reliability data analysis software.
 #### Optional requirements:
 * h5py (optional for HDF5 support)
  * http://www.h5py.org/
-* astropy >= 0.2 or PyFITS >= 1.1 (optional for FITS import)
- * http://www.stsci.edu/resources/software_hardware/pyfits
- * http://www.astropy.org/
 * PyMinuit >= 1.1.2 (optional improved fitting)
  * http://code.google.com/p/pyminuit/
 * dbus-python, for dbus interface
