@@ -231,7 +231,7 @@ class MainWindow(qt4.QMainWindow):
 
     def dragEnterEvent(self, event):
         """Check whether event is valid to be dropped."""
-        #if (event.provides("text/uri-list") and
+        # valid events are "text/uri-list" mime type (hasUrls()).
         if (event.mimeData().hasUrls() and
             self._getOpenReliabilityDropFiles(event)):
             event.acceptProposedAction()
@@ -256,7 +256,7 @@ class MainWindow(qt4.QMainWindow):
         if not mime.hasUrls():
             return []
         else:
-            # get list of vsz files dropped
+            # get list of ore files dropped
             urls = [u.path() for u in mime.urls()]
             urls = [u for u in urls if os.path.splitext(u)[1] == '.ore']
             return urls
