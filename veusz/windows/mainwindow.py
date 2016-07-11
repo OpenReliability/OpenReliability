@@ -257,10 +257,7 @@ class MainWindow(qt4.QMainWindow):
             return []
         else:
             # get list of ore files dropped
-            urls = [u.path() for u in mime.urls()]
-            # clean list of paths on windows (initial /)
-            if sys.platform.startswith('win32'):
-                urls = [u[1:] for u in urls]
+            urls = [u.toLocalFile() for u in mime.urls()]
             urls = [u for u in urls if os.path.splitext(u)[1] == '.ore']
             return urls
 
