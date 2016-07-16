@@ -392,7 +392,7 @@ class PlotWindow( qt4.QGraphicsView ):
                 'view.zoom11':
                     a(self, _('Restore plot to natural size'), _('Zoom 1:1'),
                       self.slotViewZoom11,
-                      icon='kde-zoom-1-veuszedit', key='Ctrl+1'),
+                      icon='kde-zoom-1-veuszedit', key='Ctrl+0'),
                 'view.zoomwidth':
                     a(self, _('Zoom plot to show whole width'), _('Zoom to width'),
                       self.slotViewZoomWidth,
