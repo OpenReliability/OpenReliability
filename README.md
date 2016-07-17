@@ -24,6 +24,8 @@ OpenReliability is a microelectronics reliability data analysis software.
  * http://code.google.com/p/pyminuit/
 * dbus-python, for dbus interface
  * http://dbus.freedesktop.org/doc/dbus-python/
+ * qt5-image-formats-plugins is needed under Linux for TIFF export.
+
 
 #### License:
 OpenReliability is based on Veusz (graphic toolkit).
