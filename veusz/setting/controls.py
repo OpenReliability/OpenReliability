@@ -26,7 +26,7 @@
 
 from __future__ import division
 import re
-import os
+import os, inspect
 import numpy as N
 
 from ..compat import crange, czip, citems, cstr
@@ -1771,10 +1771,17 @@ class FontFamily(qt4.QFontComboBox):
 
     sigSettingChanged = qt4.pyqtSignal(qt4.QObject, object, object)
 
+    # Add the fonts we supply in OpenReliability to the list of system fonts
     # List all system fonts
     db = qt4.QFontDatabase
-    # Add to the list the fonts we supply in OpenReliability
-    fontPath = os.path.join(os.path.abspath(os.path.curdir),u'fonts')
+    # Find where we are
+    currentPath = inspect.getfile(inspect.currentframe())
+    # Go up 3 levels
+    for x in range(0, 3):
+        currentPath = os.path.dirname(currentPath)
+    # Fonts folder
+    fontPath = os.path.join(currentPath,u'fonts')
+    # Add the fonts
     for font in os.walk(fontPath):
         newFontPath = os.path.join(os.path.abspath(os.path.curdir), font[0])
         for file in os.listdir(newFontPath):
