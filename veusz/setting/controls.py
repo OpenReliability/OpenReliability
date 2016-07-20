@@ -26,6 +26,7 @@
 
 from __future__ import division
 import re
+import os
 import numpy as N
 
 from ..compat import crange, czip, citems, cstr
@@ -178,7 +179,7 @@ class String(qt4.QWidget):
         b = self.button = DotDotButton(tooltip="Edit text")
         layout.addWidget(b)
 
-        # set the text of the widget to the 
+        # set the text of the widget to the
         self.edit.setText( setting.toText() )
 
         self.edit.editingFinished.connect(self.validateAndSet)
@@ -248,7 +249,7 @@ class Int(qt4.QSpinBox):
         self.setting.setOnModified(self.onModified)
 
         if setting.readonly:
-            self.setEnabled(False)            
+            self.setEnabled(False)
 
     def slotChanged(self, value):
         """If check box changes."""
@@ -291,7 +292,7 @@ class Bool(qt4.QCheckBox):
         # this is emitted by setChecked, so ignore onModified doing this
         if not self.ignorechange:
             self.sigSettingChanged.emit(self, self.setting, state)
-        
+
     @qt4.pyqtSlot()
     def onModified(self):
         """called when the setting is changed remotely"""
@@ -478,8 +479,8 @@ class MultiLine(qt4.QTextEdit):
 
         self.setWordWrapMode(qt4.QTextOption.NoWrap)
         self.setTabChangesFocus(True)
-        
-        # set the text of the widget to the 
+
+        # set the text of the widget to the
         self.setPlainText( setting.toText() )
 
         self.setting.setOnModified(self.onModified)
@@ -546,7 +547,7 @@ class Distance(Choice):
         self.allowauto = allowauto
         self.physical = physical
         self.updateComboList()
-        
+
     def updateComboList(self):
         '''Populates combo list with sensible list of other possible units.'''
 
@@ -604,11 +605,11 @@ class DistancePt(Choice):
         '18pt', '20pt', '22pt', '24pt', '26pt', '28pt', '30pt',
         '34pt', '40pt', '44pt', '50pt', '60pt', '70pt'
         )
-    
+
     def __init__(self, setting, parent, allowauto=False):
         '''Initialise with blank list, then populate with sensible units.'''
         Choice.__init__(self, setting, True, DistancePt.points, parent)
-        
+
 class Dataset(qt4.QWidget):
     """Allow the user to choose between the possible datasets."""
 
@@ -620,7 +621,7 @@ class Dataset(qt4.QWidget):
         dimensions specifies the dimension of the dataset to list
 
         Changes on the document refresh the list of datasets."""
-        
+
         qt4.QWidget.__init__(self, parent)
 
         self.choice = Choice(setting, True, [], None)
@@ -660,7 +661,7 @@ class Dataset(qt4.QWidget):
             utils.populateCombo(self.choice, datasets)
             self.lastdatasets = datasets
 
-    @qt4.pyqtSlot(int)          
+    @qt4.pyqtSlot(int)
     def slotModified(self, modified):
         """Update the list of datasets if the document is modified."""
         self._populateEntries()
@@ -852,7 +853,7 @@ class LineStyle(Choice):
         setn = collections.Line('temp')
         setn.get('color').set('black')
         setn.get('width').set('1pt')
-        
+
         for lstyle in cls._lines:
             pix = qt4.QPixmap(*size)
             pix.fill()
@@ -863,7 +864,7 @@ class LineStyle(Choice):
             painter.setRenderHint(qt4.QPainter.Antialiasing)
 
             setn.get('style').set(lstyle)
-            
+
             painter.setPen( setn.makeQPen(ph) )
             painter.drawLine( int(size[0]*0.1), size[1]/2,
                               int(size[0]*0.9), size[1]/2 )
@@ -894,7 +895,7 @@ class Color(qt4.QWidget):
             self._generateIcons()
 
         self.setting = setting
- 
+
         # combo box
         c = self.combo = qt4.QComboBox()
         c.setEditable(True)
@@ -916,7 +917,7 @@ class Color(qt4.QWidget):
         if setting.readonly:
             c.setEnabled(False)
             b.setEnabled(False)
-                     
+
         layout = qt4.QHBoxLayout()
         layout.setSpacing(0)
         layout.setContentsMargins(0,0,0,0)
@@ -940,7 +941,7 @@ class Color(qt4.QWidget):
         size = 12
         if cls._icons is None:
             cls._icons = {}
-        
+
         icons = cls._icons
         for c in cls._colors:
             if c not in icons:
@@ -953,7 +954,7 @@ class Color(qt4.QWidget):
 
         if cls._colnotifier is None:
             cls._colnotifier = _ColNotifier()
-    
+
     def slotButtonClicked(self):
         """Open dialog to edit color."""
 
@@ -965,7 +966,7 @@ class Color(qt4.QWidget):
 
     def slotActivated(self, val):
         """A different value is selected."""
-        
+
         text = self.combo.currentText()
         val = self.setting.fromText(text)
         self.sigSettingChanged.emit(self, self.setting, val)
@@ -977,7 +978,7 @@ class Color(qt4.QWidget):
         if color not in Color._icons:
             Color._colors.append(color)
             Color._generateIcons()
-        
+
         # add text to combo if not there
         index = self.combo.findText(color)
 
@@ -1003,7 +1004,7 @@ class WidgetSelector(Choice):
     def _populateEntries(self):
         pass
 
-    @qt4.pyqtSlot(int)          
+    @qt4.pyqtSlot(int)
     def slotModified(self, modified):
         """Update list of axes."""
         self._populateEntries()
@@ -1281,7 +1282,7 @@ class ListSet(qt4.QFrame):
             pix = qt4.QPixmap(self.pixsize, self.pixsize)
             pix.fill( utils.extendedColorToQColor(color) )
             sender.setIcon( qt4.QIcon(pix) )
-            
+
 class LineSet(ListSet):
     """A list of line styles.
     """
@@ -1436,7 +1437,7 @@ class FillSet(ListSet):
         # construct fill icons if not already done
         if FillStyleExtended._icons is None:
             FillStyleExtended._generateIcons()
-    
+
         # make fill style selector
         wfillstyle = self.addCombo(
             _("Fill style"),
@@ -1500,7 +1501,7 @@ class MultiSettingWidget(qt4.QWidget):
         self.last = ()
         self.controls = []
         self.setting.setOnModified(self.onModified)
-        
+
     def makeRow(self):
         """Make new row at end"""
         row = len(self.controls)
@@ -1711,7 +1712,7 @@ class Filename(qt4.QWidget):
         self.edit = qt4.QLineEdit()
         self.edit.setText( setting.toText() )
         layout.addWidget(self.edit)
-        
+
         b = self.button = DotDotButton(checkable=False,
                                        tooltip=_("Browse for file"))
         layout.addWidget(b)
@@ -1770,13 +1771,23 @@ class FontFamily(qt4.QFontComboBox):
 
     sigSettingChanged = qt4.pyqtSignal(qt4.QObject, object, object)
 
+    # List all system fonts
+    db = qt4.QFontDatabase
+    # Add to the list the fonts we supply in OpenReliability
+    fontPath = os.path.join(os.path.abspath(os.path.curdir),u'fonts')
+    for font in os.walk(fontPath):
+        newFontPath = os.path.join(os.path.abspath(os.path.curdir), font[0])
+        for file in os.listdir(newFontPath):
+            if file.endswith(".ttf"):
+                db.addApplicationFont(os.path.join(newFontPath, file))
+
     def __init__(self, setting, parent):
         """Create the combobox."""
 
         qt4.QFontComboBox.__init__(self, parent)
         self.setting = setting
         self.setFontFilters( qt4.QFontComboBox.ScalableFonts )
-        
+
         # set initial value
         self.onModified()
 
@@ -1806,10 +1817,10 @@ class FontFamily(qt4.QFontComboBox):
 
 class ErrorStyle(Choice):
     """Choose different error bar styles."""
-    
+
     _icons = None         # generated icons
     _errorstyles = None   # copied in by setting.py
-    
+
     def __init__(self, setting, parent):
         if self._icons is None:
             self._generateIcons()
