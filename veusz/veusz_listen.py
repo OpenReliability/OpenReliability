@@ -59,7 +59,7 @@ class InputListener(qt4.QObject):
     def __init__(self, window):
         """Initialse the listening object to send commands to the
         document given by window."""
-        
+
         qt4.QObject.__init__(self)
 
         self.window = window
@@ -115,7 +115,7 @@ class InputListener(qt4.QObject):
     def enableToolbar(self, enable=True):
         """Enable plot toolbar."""
         self.window.enableToolbar(enable)
-        
+
     def enablePickle(self, on=True):
         """Enable/disable pickling of commands to/data from veusz"""
         self.pickle = on
@@ -127,7 +127,7 @@ class InputListener(qt4.QObject):
             retn = self.ci.runPickle( eval(line.strip()) )
             sys.stdout.write('%s\n' % repr(retn))
             sys.stdout.flush()
-            
+
         else:
             self.ci.run(line)
 

@@ -175,7 +175,7 @@ class Embedded(object):
     @classmethod
     def makeRemoteProcess(cls):
         """Try to find veusz process for remote program."""
-        
+
         # here's where to look for embed_remote.py
         thisdir = os.path.dirname(os.path.abspath(__file__))
 
@@ -344,7 +344,7 @@ class Node(object):
     def __ne__(self, other):
         """Is this a different node?"""
         return self._ci is not other._ci or self._path != other._path
-        
+
     def __repr__(self):
         """Text description"""
         return "<%s at %s (type %s)>" % (self.__class__.__name__,
@@ -558,7 +558,7 @@ class WidgetNode(Node):
 
         self._ci.Rename(self._path, newname)
         self._path = '/'.join( self._path.split('/')[:-1] + [newname] )
-        
+
     def Action(self, action):
         """Applies action on widget."""
         self._ci.Action(action, widget=self._path)
@@ -574,4 +574,3 @@ class WidgetNode(Node):
         path = self._ci.CloneWidget(self._path, newparent._path,
                                     newname=newname)
         return WidgetNode( self._ci, 'widget', path )
-

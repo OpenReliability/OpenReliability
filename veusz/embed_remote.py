@@ -254,7 +254,7 @@ class EmbedApplication(qt4.QApplication):
     def readFromSocket(self):
         self.notifier.setEnabled(False)
         self.socket.setblocking(1)
-        
+
         # unpickle command and arguments
         window, cmd, args, argsv = self.readCommand(self.socket)
 
