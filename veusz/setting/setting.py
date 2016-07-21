@@ -1372,7 +1372,7 @@ class Color(ChoiceOrMore):
     _colors = [ 'white', 'black', 'red', 'green', 'blue',
                 'cyan', 'magenta', 'yellow',
                 'grey', 'darkred', 'darkgreen', 'darkblue',
-                'darkcyan', 'darkmagenta' ]
+                'darkcyan', 'darkmagenta', 'darkgrey', 'lightgrey' ]
 
     controls.Color._colors = _colors
 
