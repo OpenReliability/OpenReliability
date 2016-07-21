@@ -1312,7 +1312,7 @@ class SettingLabel(qt4.QWidget):
             pixmap = 'downarrow.png'
         else:
             if self.setting.isReference() and not self.setting.isDefault():
-                pixmap = 'link.png'
+                pixmap = 'link.svg'
             else:
                 pixmap = 'downarrow_blank.png'
         self.iconlabel.setPixmap(utils.getPixmap(pixmap))
