@@ -34,6 +34,7 @@ from .. import qtall as qt4
 
 from .settingdb import settingdb
 from .. import utils
+from . import colors
 
 def _(text, disambiguation=None, context="Setting"):
     """Translate text."""
