@@ -1,5 +1,29 @@
-from .. import qtall as qt4
+# -*- coding: utf-8 -*-
+#    Copyright (C) 2016 Emmanuel Chery
+#    Email: Emmanuel Chery <emmanuel.chery@ams.com>
+#
+#    This program is free software; you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation; either version 2 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License along
+#    with this program; if not, write to the Free Software Foundation, Inc.,
+#    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+###############################################################################
 
+"""Module for defining the default colors proposed by the color
+    picker tool.
+    The position in the list define the position in the color
+    picker window. 
+"""
+
+from .. import qtall as qt4
 
 listColor = (   qt4.QColor(213, 62, 79),        # RED
                 qt4.QColor(50, 136, 189),       # BLUE
@@ -57,9 +81,7 @@ listColor = (   qt4.QColor(213, 62, 79),        # RED
                 qt4.QColor(189, 189, 189),
                 qt4.QColor(217, 217, 217),
                 qt4.QColor(255, 255, 255),
-
-
-)
+            )
 
 for idx, color in enumerate(listColor):
     qt4.QColorDialog.setStandardColor(idx, color)
