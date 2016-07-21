@@ -26,7 +26,6 @@
 
 from __future__ import division
 import re
-import os, inspect
 import numpy as N
 
 from ..compat import crange, czip, citems, cstr
@@ -35,6 +34,7 @@ from .. import qtall as qt4
 from .settingdb import settingdb
 from .. import utils
 from . import colors
+from . import fonts
 
 def _(text, disambiguation=None, context="Setting"):
     """Translate text."""
@@ -1771,23 +1771,6 @@ class FontFamily(qt4.QFontComboBox):
     """List the font families, showing each font."""
 
     sigSettingChanged = qt4.pyqtSignal(qt4.QObject, object, object)
-
-    # Add the fonts we supply in OpenReliability to the list of system fonts
-    # List all system fonts
-    db = qt4.QFontDatabase
-    # Find where we are
-    currentPath = inspect.getfile(inspect.currentframe())
-    # Go up 3 levels
-    for x in range(0, 3):
-        currentPath = os.path.dirname(currentPath)
-    # Fonts folder
-    fontPath = os.path.join(currentPath,u'fonts')
-    # Add the fonts
-    for font in os.walk(fontPath):
-        newFontPath = os.path.join(os.path.abspath(os.path.curdir), font[0])
-        for file in os.listdir(newFontPath):
-            if file.endswith(".ttf"):
-                db.addApplicationFont(os.path.join(newFontPath, file))
 
     def __init__(self, setting, parent):
         """Create the combobox."""
