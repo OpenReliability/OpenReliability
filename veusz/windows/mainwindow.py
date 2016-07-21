@@ -865,6 +865,10 @@ class MainWindow(qt4.QMainWindow):
         # save current setting db
         setdb.writeSettings()
 
+        # unload OpenReliability fonts
+        db = qt4.QFontDatabase
+        db.removeAllApplicationFonts()
+
         event.accept()
 
     def setupWindowGeometry(self):
