@@ -20,7 +20,7 @@
 """Module for defining the default colors proposed by the color
     picker tool.
     The position in the list define the position in the color
-    picker window. 
+    picker window.
 """
 
 from .. import qtall as qt4
@@ -39,7 +39,7 @@ listColor = (   qt4.QColor(213, 62, 79),        # RED
                 qt4.QColor(178, 223, 138),      # SOFT GREEN
                 qt4.QColor(251, 154, 153),      # SOFT PINK
 
-                qt4.QColor(140, 45, 4),        # ORANGE BROWN
+                qt4.QColor(153, 52, 4),        # ORANGE BROWN
                 qt4.QColor(204, 76, 2),
                 qt4.QColor(236, 112, 20),
                 qt4.QColor(254, 153, 41),
@@ -78,9 +78,9 @@ listColor = (   qt4.QColor(213, 62, 79),        # RED
                 qt4.QColor(37, 37, 37),         # GRAY
                 qt4.QColor(82, 82, 82),
                 qt4.QColor(115, 115, 115),
+                qt4.QColor(150, 150, 150),
                 qt4.QColor(189, 189, 189),
                 qt4.QColor(217, 217, 217),
-                qt4.QColor(255, 255, 255),
             )
 
 for idx, color in enumerate(listColor):
