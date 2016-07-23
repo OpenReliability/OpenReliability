@@ -60,10 +60,10 @@ defaultValues = {
     'color_cntrlcorner': (True, 'black'),
 
     # further ui options
-    'toolbar_size': 24,
+    'toolbar_size': 16,
 
     # if set to true, do UI formatting in US/English
-    'ui_english': False,
+    'ui_english': True,
 
     # use cwd as starting directory
     'dirname_usecwd': False,
