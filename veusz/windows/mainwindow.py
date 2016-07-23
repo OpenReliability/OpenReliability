@@ -478,7 +478,7 @@ class MainWindow(qt4.QMainWindow):
                   None, checkable=True),
             'view.console':
                 a(self, _('Show or hide console window'), _('Console window'),
-                  None, checkable=True),
+                  None, checkable=True, key='Ctrl+T'),
             'view.datanav':
                 a(self, _('Show or hide data navigator window'), _('Data navigator window'),
                   None, checkable=True),
