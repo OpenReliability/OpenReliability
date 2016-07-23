@@ -103,8 +103,8 @@ class _SettingDB(object):
         """Initialise the object, reading the settings."""
 
         # This domain name is fictional!
-        self.domain = 'veusz.org'
-        self.product = 'veusz'
+        self.domain = 'OpenReliability.org'
+        self.product = 'OpenReliability'
         self.database = {}
         self.sepchars = "%%%"
 
