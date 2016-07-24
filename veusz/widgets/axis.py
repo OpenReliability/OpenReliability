@@ -109,6 +109,8 @@ class AxisLabel(setting.Text):
 
     def __init__(self, name, **args):
         setting.Text.__init__(self, name, **args)
+        # Set new default size of 16pt for font of axis titles
+        self.get('size').newDefault( '16pt' )
         self.add( setting.Bool( 'atEdge', False,
                                 descr = _('Place axis label close to edge'
                                           ' of graph'),
