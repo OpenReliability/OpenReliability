@@ -218,7 +218,7 @@ class Axis(widget.Widget):
         s.add( setting.Choice(
                 'autoRange',
                 ('exact', 'next-tick', '+2%', '+5%', '+10%', '+15%'),
-                'next-tick',
+                '+5%',
                 descr = _('If axis range not specified, use range of '
                           'data and this setting'),
                 descriptions = (_('Use exact data range'),
