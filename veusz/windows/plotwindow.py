@@ -434,7 +434,7 @@ class PlotWindow( qt4.QGraphicsView ):
                 'view.fullscreen':
                     a(self, _('View plot full screen'), _('Full screen'),
                       self.slotFullScreen,
-                      icon='veusz-view-fullscreen', key='Ctrl+F11'),
+                      icon='veusz-view-fullscreen', key='F11'),
                 })
 
         if menu:
