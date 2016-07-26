@@ -674,6 +674,9 @@ class PlotWindow( qt4.QGraphicsView ):
 
         if event.button() == qt4.Qt.LeftButton and not self.ignoreclick:
 
+            # Is alternative zoom mode ON?
+            altZoom = self.clickmode == 'select' and event.modifiers() and qt4.Qt.AltModifier
+
             # need to copy position, otherwise it gets reused!
             self.winpos = qt4.QPoint(event.pos())
             self.grabpos = self.mapToScene(self.winpos)
@@ -687,16 +690,11 @@ class PlotWindow( qt4.QGraphicsView ):
                 qt4.QApplication.setOverrideCursor(
                     qt4.QCursor(qt4.Qt.SizeAllCursor))
 
-            elif self.clickmode == 'graphzoom':
+            elif self.clickmode == 'graphzoom' or altZoom:
+                if self.clickmode == 'select':
+                    qt4.QApplication.setOverrideCursor(qt4.QCursor(qt4.Qt.CrossCursor))
                 self.zoomrect.setRect(self.grabpos.x(), self.grabpos.y(),
                                       0, 0)
-                self.zoomrect.show()
-
-            elif self.clickmode == 'select' and  event.modifiers() & qt4.Qt.AltModifier:
-                # We are in zoom mode
-                qt4.QApplication.setOverrideCursor(qt4.QCursor(qt4.Qt.CrossCursor))
-                self.zoomrect.setRect(self.grabpos.x(), self.grabpos.y(),
-                                        0, 0)
                 self.zoomrect.show()
 
                 #self.label.drawRect(self.grabpos, self.grabpos)
@@ -716,6 +714,9 @@ class PlotWindow( qt4.QGraphicsView ):
 
         qt4.QGraphicsView.mouseMoveEvent(self, event)
 
+        # Is alternative zoom mode ON?
+        altZoom = self.currentclickmode == 'select' and event.modifiers() and qt4.Qt.AltModifier
+
         if self.currentclickmode == 'scroll':
             event.accept()
 
@@ -732,19 +733,11 @@ class PlotWindow( qt4.QGraphicsView ):
             # need to copy point
             self.winpos = qt4.QPoint(event.pos())
 
-        elif self.currentclickmode == 'graphzoom' and self.grabpos is not None:
+        elif self.currentclickmode == 'graphzoom' and self.grabpos is not None or altZoom:
             pos = self.mapToScene(event.pos())
             r = self.zoomrect.rect()
             self.zoomrect.setRect( r.x(), r.y(), pos.x()-r.x(),
                                    pos.y()-r.y() )
-
-        elif self.currentclickmode == 'select' and event.modifiers() & qt4.Qt.AltModifier and self.grabpos is not None:
-            # We are in zoom mode
-            self.scrolltimer.stop()
-            pos = self.mapToScene(event.pos())
-            r = self.zoomrect.rect()
-            self.zoomrect.setRect( r.x(), r.y(), pos.x()-r.x(),
-                                    pos.y()-r.y() )
 
         elif self.clickmode == 'select' or self.clickmode == 'pick':
             # find axes which map to this position
@@ -766,22 +759,18 @@ class PlotWindow( qt4.QGraphicsView ):
         if event.button() == qt4.Qt.LeftButton and not self.ignoreclick:
             event.accept()
             self.scrolltimer.stop()
-            if self.currentclickmode == 'select' and (event.modifiers() & qt4.Qt.AltModifier):
-                # We are in zoom mode
-                qt4.QApplication.restoreOverrideCursor()
-                self.zoomrect.hide()
-                self.doZoomRect(self.mapToScene(event.pos()))
-                self.grabpos = None
-            if self.currentclickmode == 'select':
-                # work out where the mouse clicked and choose widget
-                pos = self.mapToScene(event.pos())
-                self.identifyAndClickWidget(pos.x(), pos.y(), event.modifiers())
-            elif self.currentclickmode == 'scroll':
+
+            # Is alt zoom mode ON?
+            altZoom = self.currentclickmode == 'select' and (event.modifiers() & qt4.Qt.AltModifier)
+
+            if self.currentclickmode == 'scroll':
                 # return the cursor to normal after scrolling
                 self.clickmode = 'select'
                 self.currentclickmode = None
                 qt4.QApplication.restoreOverrideCursor()
-            elif self.currentclickmode == 'graphzoom':
+            elif self.currentclickmode == 'graphzoom' or altZoom:
+                if self.currentclickmode == 'select':
+                    qt4.QApplication.restoreOverrideCursor()
                 self.zoomrect.hide()
                 self.doZoomRect(self.mapToScene(event.pos()))
                 self.grabpos = None
@@ -789,6 +778,10 @@ class PlotWindow( qt4.QGraphicsView ):
                 self.clickmode = 'select'
             elif self.currentclickmode == 'pick':
                 self.currentclickmode = None
+            elif self.currentclickmode == 'select':
+                # work out where the mouse clicked and choose widget
+                pos = self.mapToScene(event.pos())
+                self.identifyAndClickWidget(pos.x(), pos.y(), event.modifiers())
 
     def keyPressEvent(self, event):
         """Keypad motion moves the picker if it has focus"""
