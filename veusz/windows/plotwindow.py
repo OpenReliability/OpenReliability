@@ -678,14 +678,7 @@ class PlotWindow( qt4.QGraphicsView ):
             self.winpos = qt4.QPoint(event.pos())
             self.grabpos = self.mapToScene(self.winpos)
 
-            if self.clickmode == 'select':
-                # we set this to true unless the timer runs out (400ms),
-                # then it becomes a scroll click
-                # scroll clicks drag the window around, and selecting clicks
-                # select widgets!
-                self.scrolltimer.start(400)
-
-            elif self.clickmode == 'pick':
+            if self.clickmode == 'pick':
                 self.pickeritem.show()
                 self.pickeritem.setFocus(qt4.Qt.MouseFocusReason)
                 self.doPick(event.pos())
@@ -699,7 +692,21 @@ class PlotWindow( qt4.QGraphicsView ):
                                       0, 0)
                 self.zoomrect.show()
 
+            elif self.clickmode == 'select' and  event.modifiers() & qt4.Qt.AltModifier:
+                # We are in zoom mode
+                qt4.QApplication.setOverrideCursor(qt4.QCursor(qt4.Qt.CrossCursor))
+                self.zoomrect.setRect(self.grabpos.x(), self.grabpos.y(),
+                                        0, 0)
+                self.zoomrect.show()
+
                 #self.label.drawRect(self.grabpos, self.grabpos)
+
+            elif self.clickmode == 'select':
+                # we set this to true unless the timer runs out (400ms),
+                # then it becomes a scroll click
+                # scroll clicks drag the window around, and selecting clicks
+                # select widgets!
+                self.scrolltimer.start(400)
 
             # record what mode we were clicked in
             self.currentclickmode = self.clickmode
@@ -731,6 +738,14 @@ class PlotWindow( qt4.QGraphicsView ):
             self.zoomrect.setRect( r.x(), r.y(), pos.x()-r.x(),
                                    pos.y()-r.y() )
 
+        elif self.currentclickmode == 'select' and event.modifiers() & qt4.Qt.AltModifier and self.grabpos is not None:
+            # We are in zoom mode
+            self.scrolltimer.stop()
+            pos = self.mapToScene(event.pos())
+            r = self.zoomrect.rect()
+            self.zoomrect.setRect( r.x(), r.y(), pos.x()-r.x(),
+                                    pos.y()-r.y() )
+
         elif self.clickmode == 'select' or self.clickmode == 'pick':
             # find axes which map to this position
             axes = self.axesForPoint(event.pos())
@@ -751,6 +766,12 @@ class PlotWindow( qt4.QGraphicsView ):
         if event.button() == qt4.Qt.LeftButton and not self.ignoreclick:
             event.accept()
             self.scrolltimer.stop()
+            if self.currentclickmode == 'select' and (event.modifiers() & qt4.Qt.AltModifier):
+                # We are in zoom mode
+                qt4.QApplication.restoreOverrideCursor()
+                self.zoomrect.hide()
+                self.doZoomRect(self.mapToScene(event.pos()))
+                self.grabpos = None
             if self.currentclickmode == 'select':
                 # work out where the mouse clicked and choose widget
                 pos = self.mapToScene(event.pos())
