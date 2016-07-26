@@ -473,8 +473,9 @@ class PlotWindow( qt4.QGraphicsView ):
         utils.addToolbarActions(self.viewtoolbar, actions,
                                 ('view.prevpage', 'view.nextpage',
                                  'view.fullscreen',
-                                 'view.select', 'view.pick',
-                                 'view.zoomgraph', 'view.zoommenu'))
+                                #  'view.select', 'view.pick',
+                                #  'view.zoomgraph',
+                                 'view.zoommenu'))
 
         # define action group for various different selection models
         grp = self.selectactiongrp = qt4.QActionGroup(self)
