@@ -20,8 +20,8 @@ OpenReliability is a microelectronics reliability data analysis software.
 #### Optional requirements:
 * h5py (optional for HDF5 support)
  * http://www.h5py.org/
-* PyMinuit >= 1.1.2 (optional improved fitting)
- * http://code.google.com/p/pyminuit/
+* iminuit >= 1.2 (optional improved fitting)
+ * https://iminuit.readthedocs.io/en/latest/
 * dbus-python, for dbus interface
  * http://dbus.freedesktop.org/doc/dbus-python/
 * qt5-image-formats-plugins is needed under Linux for TIFF export.
