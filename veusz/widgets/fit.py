@@ -35,7 +35,7 @@ from .function import FunctionPlotter
 from . import widget
 
 try:
-    import minuit
+    import iminuit as minuit
 except ImportError:
     minuit = None
 
@@ -65,7 +65,8 @@ def minuitFit(evalfunc, params, names, values, xvals, yvals, yserr):
     fn = eval(fnstr, {'chi2' : chi2, 'N' : N})
 
     print(_('Fitting via Minuit:'))
-    m = minuit.Minuit(fn, fix_x=True, **values)
+    # m = minuit.Minuit(fn, fix_x = True, **values)
+    m = minuit.Minuit(fn, **values)
 
     # run the fit
     chi2.runningFit = True
@@ -350,7 +351,7 @@ class Fit(FunctionPlotter):
 
         # list of operations do we can undo the changes
         operations = []
-                                      
+
         # populate the return parameters
         operations.append( document.OperationSettingSet(s.get('values'), vals) )
 
@@ -373,10 +374,10 @@ class Fit(FunctionPlotter):
         # actually change all the settings
         d.applyOperation(
             document.OperationMultiple(operations, descr=_('fit')) )
-    
+
     def generateOutputExpr(self, vals):
         """Try to generate text form of output expression.
-        
+
         vals is a dict of variable: value pairs
         returns the expression
         """
