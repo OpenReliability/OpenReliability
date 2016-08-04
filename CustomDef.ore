@@ -1,0 +1,8 @@
+# Veusz custom definitions (version 0.1)
+# Saved at 2016-08-04T16:57:57.066305
+
+AddCustom('import', 'scipy', 'stats')
+AddCustom('import', 'scipy.stats', 'norm')
+AddCustom('function', 'qnorm(p)', 'norm.ppf(p)')
+AddCustom('function', 'pnorm(q)', 'norm.cdf(q)')
+AddCustom('function', 'fracEstim(v)', '(v-0.3)/(len(v)+0.4)*100')
