@@ -33,7 +33,7 @@ currentPath = inspect.getfile(inspect.currentframe())
 for x in range(0, 3):
     currentPath = os.path.dirname(currentPath)
 # Fonts folder
-fontPath = os.path.join(currentPath,u'fonts')
+fontPath = os.path.join(currentPath, u'fonts')
 # Add the fonts
 for font in os.walk(fontPath):
     newFontPath = os.path.join(os.path.abspath(os.path.curdir), font[0])

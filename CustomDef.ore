@@ -1,8 +1,19 @@
 # Veusz custom definitions (version 0.1)
-# Saved at 2016-08-04T16:57:57.066305
+# Saved at 2016-08-05T21:55:13.423496
 
 AddCustom('import', 'scipy', 'stats')
+AddCustom('import', 'scipy', 'constants')
 AddCustom('import', 'scipy.stats', 'norm')
 AddCustom('function', 'qnorm(p)', 'norm.ppf(p)')
 AddCustom('function', 'pnorm(q)', 'norm.cdf(q)')
 AddCustom('function', 'fracEstim(v)', '(v-0.3)/(len(v)+0.4)*100')
+AddCustom('function', 'qweibull(p)', 'log(-log(1-p))')
+AddCustom('function', 'pweibull(q)', '1-exp(-exp(q))')
+AddCustom('constant', 'Pi', 'constants.pi')
+AddCustom('constant', 'k', 'constants.Boltzmann')
+AddCustom('constant', 'e', 'constants.e')
+AddCustom('constant', 'mu', 'constants.epsilon_0')
+AddCustom('constant', 'c', 'constants.c')
+AddCustom('constant', 'h', 'constants.h')
+AddCustom('constant', 'R', 'constants.R')
+AddCustom('constant', 'N_A', 'constants.Avogadro')
