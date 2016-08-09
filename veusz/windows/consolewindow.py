@@ -142,7 +142,7 @@ class _CommandEdit(qt4.QLineEdit):
 
 introtext=_(u'''Welcome to <b><font color="SteelBlue">OpenReliability %s</font></b> --- a microelectronic reliability data analysis software.<br>
 Copyright \u00a9 2016 Emmanuel Chery.<br>
-OpenReliability comes with ABSOLUTELY NO WARRANTY. OpenReliability is Free Software, and you are<br>
+OpenReliability comes with ABSOLUTELY NO WARRANTY. OpenReliability is Free Software, and you are
 welcome to redistribute it under certain conditions. Enter "GPL()" for details.<br>
 This window is a Python command line console and acts as a calculator.<br>
 ''') % utils.version()
