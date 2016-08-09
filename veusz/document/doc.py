@@ -19,7 +19,7 @@
 #    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 ##############################################################################
 
-"""A class to represent Veusz documents, with dataset classes."""
+"""A class to represent OpenReliability documents, with dataset classes."""
 
 from __future__ import division
 import codecs
@@ -163,7 +163,7 @@ class Document( qt4.QObject ):
         self.historybatch = []
         self.historyundo = []
         self.historyredo = []
-        
+
     def suspendUpdates(self):
         """Holds sending update messages.
         This speeds up modification of the document and prevents the document
@@ -196,7 +196,7 @@ class Document( qt4.QObject ):
 
     def applyOperation(self, operation):
         """Apply operation to the document.
-        
+
         Operations represent atomic actions which can be done to the document
         and undone.
 
@@ -224,19 +224,19 @@ class Document( qt4.QObject ):
 
     def batchHistory(self, batch):
         """Enable/disable batch history mode.
-        
+
         In this mode further operations are added to the OperationMultiple specified,
         until batchHistory is called with None.
-        
+
         The objects are pushed into a list and popped off
-        
+
         This allows multiple operations to be batched up for simple undo.
         """
         if batch:
             self.historybatch.append(batch)
         else:
             self.historybatch.pop()
-        
+
     def undoOperation(self):
         """Undo the previous operation."""
 
@@ -250,7 +250,7 @@ class Document( qt4.QObject ):
             raise
         self.enableUpdates()
         self.historyredo.append(operation)
-        
+
     def canUndo(self):
         """Returns True if previous operation can be removed."""
         return len(self.historyundo) != 0
@@ -263,10 +263,10 @@ class Document( qt4.QObject ):
     def canRedo(self):
         """Returns True if previous operation can be redone."""
         return len(self.historyredo) != 0
-        
+
     def resolveFullWidgetPath(self, path):
         """Translate the widget path given into the widget."""
-        
+
         widget = self.basewidget
         for p in [i for i in path.split('/') if i != '']:
             for child in widget.children:
@@ -277,7 +277,7 @@ class Document( qt4.QObject ):
                 # break wasn't called
                 assert False
         return widget
-        
+
     def resolveFullSettingPath(self, path):
         """Translate setting path into setting object."""
 
@@ -293,13 +293,13 @@ class Document( qt4.QObject ):
             else:
                 # no child with name
                 break
-            
+
         # get Setting object
         s = widget.settings
         while isinstance(s, setting.Settings) and parts[0] in s.setdict:
             s = s.get(parts[0])
             del parts[0]
-            
+
         assert isinstance(s, setting.Setting)
         return s
 
@@ -311,10 +311,10 @@ class Document( qt4.QObject ):
         """Set data to val, with symmetric or negative and positive errors."""
         self.data[name] = dataset
         dataset.document = self
-        
+
         # update the change tracking
         self.setModified()
-    
+
     def deleteData(self, name):
         """Remove a dataset"""
         if name in self.data:
@@ -432,7 +432,7 @@ class Document( qt4.QObject ):
         if antialias:
             painter.setRenderHint(qt4.QPainter.Antialiasing, True)
             painter.setRenderHint(qt4.QPainter.TextAntialiasing, True)
-   
+
         sizes = []
 
         # This all assumes that only pages can go into the root widget
@@ -476,7 +476,7 @@ class Document( qt4.QObject ):
     def _writeFileHeader(self, fileobj, type):
         """Write a header to a saved file of type."""
 
-        fileobj.write('# Veusz %s (version %s)\n' % (type, utils.version()))
+        fileobj.write('# OpenReliability %s (version %s)\n' % (type, utils.version()))
         fileobj.write('# Saved at %s\n\n' %
                       datetime.datetime.utcnow().isoformat())
 
@@ -520,7 +520,7 @@ class Document( qt4.QObject ):
         """
 
         self._writeFileHeader(fileobj, 'saved document')
-        
+
         # add file directory to import path if we know it
         reldirname = None
         if getattr(fileobj, 'name', False):
@@ -546,7 +546,7 @@ class Document( qt4.QObject ):
 
         # save the actual tree structure
         fileobj.write(self.basewidget.getSaveText())
-        
+
         self.setModified(False)
 
     def saveToHDF5File(self, fileobj):
@@ -652,7 +652,7 @@ class Document( qt4.QObject ):
         if integer:
             return int(w), int(h)
         else:
-            return w, h        
+            return w, h
 
     def pageSize(self, pagenum, dpi=None, scaling=1., integer=True):
         """Get the size of a particular page in pixels.
