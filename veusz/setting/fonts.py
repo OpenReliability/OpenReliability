@@ -38,5 +38,5 @@ fontPath = os.path.join(currentPath, u'fonts')
 for font in os.walk(fontPath):
     newFontPath = os.path.join(os.path.abspath(os.path.curdir), font[0])
     for file in os.listdir(newFontPath):
-        if file.endswith(".ttf"):
+        if file.endswith(".ttf") or file.endswith(".otf"):
             db.addApplicationFont(os.path.join(newFontPath, file))
