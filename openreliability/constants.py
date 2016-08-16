@@ -23,7 +23,7 @@ from math import exp, log
 
 # Physics constants
 c = constants.c
-e = constants.e
+q = constants.e
 h = constants.h
 k = constants.Boltzmann
 mu = constants.epsilon_0
