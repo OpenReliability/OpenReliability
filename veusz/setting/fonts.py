@@ -22,21 +22,15 @@
 """
 
 import os
-import inspect
 from .. import qtall as qt4
 
 # List all system fonts
 db = qt4.QFontDatabase
-# Find where we are
-currentPath = inspect.getfile(inspect.currentframe())
-# Go up 3 levels
-for x in range(0, 3):
-    currentPath = os.path.dirname(currentPath)
-# Fonts folder
-fontPath = os.path.join(currentPath, u'fonts')
+
+fontPath = os.path.abspath("./fonts")
+
 # Add the fonts
-for font in os.walk(fontPath):
-    newFontPath = os.path.join(os.path.abspath(os.path.curdir), font[0])
-    for file in os.listdir(newFontPath):
-        if file.endswith(".ttf") or file.endswith(".otf"):
-            db.addApplicationFont(os.path.join(newFontPath, file))
+for path, dirs, files in os.walk(fontPath):
+    for filename in files:
+        if filename.endswith(".ttf") or filename.endswith(".otf"):
+            db.addApplicationFont(os.path.join(path, filename))
