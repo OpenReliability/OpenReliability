@@ -30,7 +30,7 @@ import os.path
 import signal
 import optparse
 
-# trick to make sure OpenReliability is on the path, if being run as a script
+# trick to make sure Veusz is on the path, if being run as a script
 try:
     import veusz
 except ImportError:
@@ -86,7 +86,7 @@ def makeSplashLogo():
     # Center the spash screen
     splash.setGeometry(5, 5, 100, 100)
     screen = qt4.QDesktopWidget().screenGeometry()
-    splash.move((screen.width() - layout.sizeHint().width())/2, 
+    splash.move((screen.width() - layout.sizeHint().width())/2,
         (screen.height() - layout.sizeHint().height())/2)
 
     return splash
