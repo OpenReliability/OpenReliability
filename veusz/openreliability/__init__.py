@@ -18,4 +18,4 @@
 
 """Main OpenReliability module"""
 
-from .constants import *
+from .cst import *
