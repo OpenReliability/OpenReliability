@@ -51,7 +51,7 @@ import os.path
 from ..compat import pickle, cexec
 from .commandinterface import CommandInterface
 from .. import utils
-from ..openreliability.cst import *
+# from ..openreliability.cst import *
 
 class CommandInterpreter(object):
     """Class for executing commands in the Veusz command line language."""
@@ -72,6 +72,9 @@ class CommandInterpreter(object):
 
         # import numpy into the environment
         cexec("from numpy import *", self.globals)
+
+        # import OpenReliability constants & functions into the environment
+        cexec("from ..openreliability.cst import *", self.globals)
 
         # define root object
         self.globals['Root'] = self.interface.Root
