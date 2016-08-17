@@ -23,17 +23,37 @@ from math import exp, log
 
 # Physics constants
 c = constants.c
-q = constants.e
+eps_0 = constants.epsilon_0
+eV = constants.e
 h = constants.h
+hbar = constants.hbar
 k = constants.Boltzmann
-mu = constants.epsilon_0
+mu_0 = constants.mu_0
 N_A = constants.Avogadro
 Pi = constants.pi
+q = constants.e
 R = constants.R
 
 
 
 # Usual functions
+
+def inCelsius(T):
+    """Return the temperature in Celsius"""
+    if T >= 0:
+            return(T - 273.15)
+    else:
+        raise Exception('Negative temperature provided')
+
+def inKelvin(T):
+    """Return the temperature in Kelvin"""
+    if T >= -273.15:
+            return(T + 273.15)
+    else:
+        raise Exception('Temperature below absolute zero provided')
+
+print(inKelvin(-300))
+
 def fracEstim(v):
     """Calculate the fraction estimator for a given vector v."""
     rank = stats.rankdata(v)
