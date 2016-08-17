@@ -51,7 +51,6 @@ import os.path
 from ..compat import pickle, cexec
 from .commandinterface import CommandInterface
 from .. import utils
-# from ..openreliability.cst import *
 
 class CommandInterpreter(object):
     """Class for executing commands in the Veusz command line language."""
