@@ -52,8 +52,6 @@ def inKelvin(T):
     else:
         raise Exception('Temperature below absolute zero provided')
 
-print(inKelvin(-300))
-
 def fracEstim(v):
     """Calculate the fraction estimator for a given vector v."""
     rank = stats.rankdata(v)
