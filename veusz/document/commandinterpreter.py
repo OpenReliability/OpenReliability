@@ -51,6 +51,7 @@ import os.path
 from ..compat import pickle, cexec
 from .commandinterface import CommandInterface
 from .. import utils
+from ..openreliability.cst import *
 
 class CommandInterpreter(object):
     """Class for executing commands in the Veusz command line language."""
@@ -101,7 +102,7 @@ class CommandInterpreter(object):
 
     def _pythonise(self, text):
         """Internal routine to convert commands in the form Cmd a b c into Cmd(a,b,c)."""
-        
+
         out = ''
         # iterate over lines
         for l in text.split('\n'):
@@ -114,14 +115,14 @@ class CommandInterpreter(object):
             out += l + '\n'
 
         return out
-        
+
     def run(self, inputcmds, filename = None):
         """ Run a set of commands inside the preserved environment.
 
         inputcmds: a string with the commands to run
         filename: a filename to report if there are errors
         """
-        
+
         if filename is None:
             filename = '<string>'
 
@@ -192,7 +193,7 @@ class CommandInterpreter(object):
         self.document.setModified()
         self.document.setModified(False)
         self.document.clearHistory()
-        
+
     def runFile(self, fileobject):
         """ Run a file in the preserved environment."""
 
@@ -212,7 +213,7 @@ class CommandInterpreter(object):
             i = sys.exc_info()
             backtrace = traceback.format_exception( *i )
             for l in backtrace:
-                sys.stderr.write(l)            
+                sys.stderr.write(l)
 
         self.document.enableUpdates()
 
@@ -271,9 +272,8 @@ class CommandInterpreter(object):
         except Exception as e:
             # return exception picked if exception
             retn = e
-            
+
         del self.globals['_tmp_args0']
         del self.globals['_tmp_args1']
 
         return pickle.dumps(retn)
-    
