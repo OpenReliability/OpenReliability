@@ -997,17 +997,11 @@ class Document( qt4.QObject ):
                 c[name] = val
 
         # add OpenReliability things
-
-        # list the functions
-        l1 = [x.__name__ for x in cst.__dict__.values() if inspect.isfunction(x)]
-        # list our defined contants
-        l2 = [item for item in dir(cst) if not item.startswith("__")]
-        l3 = [x.__name__ for x in cst.__dict__.values() if inspect.ismodule(x)]
-        print(l3)
-        l2 = [item for item in l2 if item not in l1]
-        l2 = [item for item in l2 if item not in l3]
-        print(l2)
-
+        for name, val in citems(cst.__dict__):
+            if ( (callable(val) or type(val)==float) and
+                 name not in __builtins__ and
+                 name[:1] != '_' and name[-1:] != '_' ):
+                c[name] = val
 
         # safe functions
         c['os_path_join'] = os.path.join
