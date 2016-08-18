@@ -37,7 +37,6 @@ R = constants.R
 
 
 # Usual functions
-
 def inCelsius(T):
     """Return the temperature in Celsius"""
     if T >= 0:
@@ -57,6 +56,8 @@ def fracEstim(v):
     rank = stats.rankdata(v)
     return((rank-0.3)/(len(v)+0.4)*100)
 
+
+# Statistical distributions
 def qnorm(p):
     """Return the standard deviation for a given probability"""
     return(stats.norm.ppf(p))
@@ -75,3 +76,23 @@ def qweibull(p):
 def pweibull(q):
     """Return the probability for a given weibit"""
     return(1-exp(-exp(q)))
+
+def qt(p, df):
+    """Return the Student quantile for a given probability
+    and a degree of freedom"""
+    return(stats.t.ppf(p, df))
+
+def pt(q, df):
+    """Return the Student probability for a given quantile
+    and a degree of freedom"""
+    return(stats.t.cdf(q, df))
+
+def qexpon(p):
+    """Return the quantile of the exponential distribution
+     for a given probability"""
+    return(stats.expon.ppf(p))
+
+def pexpon(q):
+    """Return the probability for a given quantile
+    of the exponential distribution"""
+    return(stats.expon.cdf(q))
