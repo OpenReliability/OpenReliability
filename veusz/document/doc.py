@@ -988,16 +988,16 @@ class Document( qt4.QObject ):
 
         self.eval_context = c = {}
 
-        # add numpy things
-        # we try to avoid various bits and pieces for safety
-        for name, val in citems(N.__dict__):
+        # add OpenReliability things first to avoid owritting numpy stuff
+        for name, val in citems(cst.__dict__):
             if ( (callable(val) or type(val)==float) and
                  name not in __builtins__ and
                  name[:1] != '_' and name[-1:] != '_' ):
                 c[name] = val
 
-        # add OpenReliability things
-        for name, val in citems(cst.__dict__):
+        # add numpy things
+        # we try to avoid various bits and pieces for safety
+        for name, val in citems(N.__dict__):
             if ( (callable(val) or type(val)==float) and
                  name not in __builtins__ and
                  name[:1] != '_' and name[-1:] != '_' ):

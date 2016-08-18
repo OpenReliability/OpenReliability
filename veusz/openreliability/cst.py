@@ -19,7 +19,7 @@
 """OpenReliability physics constants and predefined functions."""
 
 from scipy import stats, constants
-from math import exp, log
+from numpy import exp, log
 
 # Physics constants
 c = constants.c
