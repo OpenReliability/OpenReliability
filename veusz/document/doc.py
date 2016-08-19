@@ -988,20 +988,17 @@ class Document( qt4.QObject ):
 
         self.eval_context = c = {}
 
-        # add OpenReliability things first to avoid owritting numpy stuff
-        for name, val in citems(cst.__dict__):
-            if ( (callable(val) or type(val)==float) and
-                 name not in __builtins__ and
-                 name[:1] != '_' and name[-1:] != '_' ):
-                c[name] = val
 
         # add numpy things
         # we try to avoid various bits and pieces for safety
-        for name, val in citems(N.__dict__):
-            if ( (callable(val) or type(val)==float) and
-                 name not in __builtins__ and
-                 name[:1] != '_' and name[-1:] != '_' ):
-                c[name] = val
+        # we add OpenReliability things first to avoid overwritting numpy stuff
+        listModules = [cst, N]
+        for module in listModules:
+            for name, val in citems(module.__dict__):
+                if ( (callable(val) or type(val)==float) and
+                    name not in __builtins__ and
+                    name[:1] != '_' and name[-1:] != '_' ):
+                    c[name] = val
 
         # safe functions
         c['os_path_join'] = os.path.join
