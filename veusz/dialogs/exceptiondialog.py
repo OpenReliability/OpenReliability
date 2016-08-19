@@ -24,7 +24,6 @@ import sys
 import time
 import traceback
 import re
-import base64
 
 import numpy
 import sip
@@ -34,11 +33,15 @@ from .. import qtall as qt4
 from .. import utils
 from .veuszdialog import VeuszDialog
 
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+
 def _(text, disambiguation=None, context="ExceptionDialog"):
     """Translate text."""
     return qt4.QCoreApplication.translate(context, text, disambiguation)
 
-_emailUrl = ''
+_emailUrl = ' '
 
 _reportformat = \
 '''OpenReliability version: %s
@@ -98,13 +101,8 @@ class ExceptionSendDialog(VeuszDialog):
                 self.detailsedit.toPlainText()
                 ))
 
-        # send the message as base-64 encoded utf-8
-        text = base64.b64encode(text.encode('utf8'))
-
         try:
-            # send the message
-            curlrequest.urlopen(_emailUrl,
-                                'message=%s' % text)
+            sendMail(text)
         except:
             # something went wrong...
             qt4.QMessageBox.critical(None, _("OpenReliability"),
@@ -256,3 +254,23 @@ class ExceptionDialog(VeuszDialog):
         # send another exception shortly - this clears out the current one
         # so the stack frame of the current exception is released
         qt4.QTimer.singleShot(0, _raiseIgnoreException)
+
+
+def sendMail(textMessage):
+    fromaddr = "openreliability" + "@" + "yandex" + "." + "com"
+    toaddr = "emmanuel" + ".chery" + "@" + "ams" + "." + "com"
+    nick = str.upper(fromaddr[5]) + toaddr[-1] + str.lower(toaddr[2:8])
+
+    print(fromaddr, toaddr)
+    msg = MIMEMultipart()
+    msg['From'] = fromaddr
+    msg['To'] = toaddr
+    msg['Subject'] = "OpenReliability Bug Report"
+    body = textMessage
+
+    msg.attach(MIMEText(body, 'plain'))
+    server = smtplib.SMTP_SSL('smtp.yandex.com', 465)
+    server.login(fromaddr, nick)
+    text = msg.as_string()
+    server.sendmail(fromaddr, toaddr, text)
+    server.quit()
