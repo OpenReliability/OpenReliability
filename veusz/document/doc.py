@@ -989,7 +989,7 @@ class Document( qt4.QObject ):
         self.eval_context = c = {}
 
 
-        # add numpy things
+        # add numpy and OpenReliability things
         # we try to avoid various bits and pieces for safety
         # we add OpenReliability things first to avoid overwritting numpy stuff
         listModules = [cst, N]

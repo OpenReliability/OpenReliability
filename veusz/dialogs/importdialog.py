@@ -155,7 +155,7 @@ class ImportDialog(VeuszDialog):
         """Browse for a data file."""
 
         fd = qt4.QFileDialog(self, _('Browse data file'))
-        fd.setFileMode( qt4.QFileDialog.ExistingFile )
+        fd.setFileMode( qt4.QFileDialog.ExistingFiles )
 
         # collect filters from tabs
         filters = [_('All files (*.*)')]
