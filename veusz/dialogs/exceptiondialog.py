@@ -206,8 +206,8 @@ class ExceptionDialog(VeuszDialog):
 
         try:
             p = curlrequest.urlopen(
-                'http://download.gna.org/veusz/').read().decode('ascii')
-            versions = re.findall('veusz-([0-9.]+).tar.gz', p)
+                'http://github.com/OpenReliability/OpenReliability/releases').read().decode('utf-8')
+            versions = re.findall('v([0-9.]+).*\.tar\.gz', p)
         except:
             versions = []
 
