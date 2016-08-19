@@ -21,16 +21,14 @@
     The fonts are located in the fonts fonts folder of OpenReliability
 """
 
-import os
-import sys
+import os.path
 from .. import qtall as qt4
+from ..utils import utilfuncs
 
 # List all system fonts
 db = qt4.QFontDatabase
 
-# os.path.dirname(os.path.abspath(__file__))
-fontPath = os.path.join(os.path.dirname(os.path.abspath(sys.argv[0]))
-                        ,u'fonts')
+fontPath = os.path.join(utilfuncs.resourceDirectory, u'fonts')
 
 # Add the fonts
 for path, dirs, files in os.walk(fontPath):
