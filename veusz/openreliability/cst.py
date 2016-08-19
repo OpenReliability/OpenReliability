@@ -78,21 +78,91 @@ def pweibull(q):
     return(1-exp(-exp(q)))
 
 def qt(p, df):
-    """Return the Student quantile for a given probability
+    """Return the Student percentile for a given probability
     and a degree of freedom"""
     return(stats.t.ppf(p, df))
 
 def pt(q, df):
-    """Return the Student probability for a given quantile
+    """Return the Student probability for a given percentile
     and a degree of freedom"""
     return(stats.t.cdf(q, df))
 
 def qexpon(p):
-    """Return the quantile of the exponential distribution
+    """Return the percentile of the exponential distribution
      for a given probability"""
     return(stats.expon.ppf(p))
 
 def pexpon(q):
-    """Return the probability for a given quantile
+    """Return the probability for a given percentile
     of the exponential distribution"""
     return(stats.expon.cdf(q))
+
+def qcauchy(p):
+    """Return the percentile of the Cauchy distribution
+    for a given probability"""
+    return(stats.cauchy.ppf(p))
+
+def pcauchy(q):
+    """Return the probability for a given percentile
+    of the Cauchy distribution"""
+    return(stats.cauchy.cdf(q))
+
+def qchi(p, df):
+    """Return the Chi distribution percentile for a given probability
+    and a degree of freedom"""
+    return(stats.chi.ppf(p, df))
+
+def pchi(q, df):
+    """Return the Chi distribution probability for a given percentile
+    and a degree of freedom"""
+    return(stats.chi.cdf(q, df))
+
+def qchi2(p, df):
+    """Return the Chi2 distribution percentile for a given probability
+    and a degree of freedom"""
+    return(stats.chi2.ppf(p, df))
+
+def pchi2(q, df):
+    """Return the Chi2 distribution probability for a given percentile
+    and a degree of freedom"""
+    return(stats.chi2.cdf(q, df))
+
+def qerlang(p, a):
+    """Return the Erlang distribution percentile for a given probability
+    and a given shape"""
+    return(stats.erlang.ppf(p, a))
+
+def perlang(q, a):
+    """Return the Erlang distribution probability for a given percentile
+    and a given shape"""
+    return(stats.erlang.cdf(q, a))
+
+def qgamma(p, a):
+    """Return the gamma distribution percentile for a given probability
+    and a given shape"""
+    return(stats.gamma.ppf(p, a))
+
+def pgamma(q, a):
+    """Return the gamma distribution probability for a given percentile
+    and a given shape"""
+    return(stats.gamma.cdf(q, a))
+
+def qpareto(p, a):
+    """Return the pareto distribution percentile for a given probability
+    and a given shape"""
+    return(stats.pareto.ppf(p, a))
+
+def ppareto(q, a):
+    """Return the pareto distribution probability for a given percentile
+    and a given shape"""
+    return(stats.pareto.cdf(q, a))
+
+def qbeta(p, a, b):
+    """Return the beta distribution percentile for a given probability
+    and given shape parameters"""
+    return(stats.beta.ppf(p, a, b))
+
+def pbeta(q, a, b):
+    """Return the beta distribution probability for a given percentile
+    and given shape parameters"""
+    return(stats.beta.cdf(q, a, b))
