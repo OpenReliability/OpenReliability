@@ -714,7 +714,7 @@ class DatasetBrowser(qt4.QWidget):
     grpentries = {
         "none": _("None"),
         "filename": _("Filename"),
-        "type": _("Type"), 
+        "type": _("Type"),
         "size": _("Size"),
         "tags": _("Tags"),
         }
