@@ -32,7 +32,7 @@ import time
 from collections import defaultdict
 
 from ..compat import citems, cstr, CStringIO, cbasestr, cpy3, cbytes, crepr, \
-    crange, czip
+    crange
 from .. import qtall as qt4
 import numpy as N
 
@@ -455,18 +455,9 @@ def positionFloatingPopup(popup, widget):
 def unique(inlist):
     """Get unique entries in list."""
 
-    def sortAlg(inlist):
-        """Sorting algorithm for unique"""
-        names = [str(item) for item in inlist]
-        rank = N.array(names).argsort().argsort()
-        sortRes = [None] * len(names)
-        for rk, item in czip(rank, inlist):
-            sortRes[rk] = item
-        return sortRes
-
     inlist = list(inlist)
-    # inlist.sort()
-    inlist = sortAlg(inlist)
+    names = N.array([str(item) for item in inlist])
+    inlist = list(N.array(inlist)[names.argsort()])
 
     class X: pass
     last = X()
