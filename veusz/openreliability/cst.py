@@ -55,7 +55,7 @@ def inKelvin(T):
 def fracEstim(v):
     """Calculate the fraction estimator for a given vector v."""
     rank = stats.rankdata(v)
-    return((rank-0.3)/(len(v)+0.4)*100)
+    return((rank-0.3)/(len(v)+0.4))
 
 
 # Statistical distributions
