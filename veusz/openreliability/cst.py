@@ -20,6 +20,7 @@
 
 from scipy import stats, constants
 from numpy import exp, log
+import rpy2 as r
 
 # Physics constants
 c = constants.c
