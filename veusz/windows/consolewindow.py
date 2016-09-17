@@ -42,16 +42,23 @@ class _Writer(object):
     the specified function."""
 
     def __init__(self, function):
-        """ Set the function output is sent to."""
+        """Set the function output is sent to."""
         self.function = function
 
     def write(self, text):
-        """ Send text to the output function."""
+        """Send text to the output function."""
         self.function(text)
 
     def flush(self):
-        """ Does nothing as yet."""
+        """Does nothing as yet."""
         pass
+
+class _Reader(object):
+    """Fake reading input stream object."""
+    def read(self, *args):
+        raise IOError('Interactive input not supported')
+    def readline(self, *args):
+        raise IOError('Interactive input not supported')
 
 class _CommandEdit(qt4.QLineEdit):
     """ A special class to allow entering of the command line.
@@ -166,12 +173,14 @@ class ConsoleWindow(qt4.QDockWidget):
         # start an interpreter instance to the document
         self.interpreter = document.CommandInterpreter(thedocument)
         self.document = thedocument
-        # output from the interpreter goes to self.output_stdxxx
 
+        # streams the output/input goes to/from
         self.con_stdout = _Writer(self.output_stdout)
         self.con_stderr = _Writer(self.output_stderr)
+        self.con_stdin = _Reader()
 
-        self.interpreter.setOutputs(self.con_stdout, self.con_stderr)
+        self.interpreter.setFiles(
+            self.con_stdout, self.con_stderr, self.con_stdin)
         self.stdoutbuffer = ""
         self.stderrbuffer = ""
 
@@ -239,10 +248,9 @@ class ConsoleWindow(qt4.QDockWidget):
         exceptions."""
 
         # preserve output streams
-        temp_stdout = sys.stdout
-        temp_stderr = sys.stderr
-        sys.stdout = _Writer(self.output_stdout)
-        sys.stderr = _Writer(self.output_stderr)
+        saved = sys.stdout, sys.stderr, sys.stdin
+        sys.stdout, sys.stderr, sys.stdin = (
+            self.con_stdout, self.con_stderr, self.con_stdin)
 
         # catch any exceptions, printing problems to stderr
         self.document.suspendUpdates()
@@ -257,8 +265,7 @@ class ConsoleWindow(qt4.QDockWidget):
         self.document.enableUpdates()
 
         # return output streams
-        sys.stdout = temp_stdout
-        sys.stderr = temp_stderr
+        sys.stdout, sys.stderr, sys.stdin = saved
 
     def checkVisible(self):
         """If this window is hidden, show it, then hide it again in a few
