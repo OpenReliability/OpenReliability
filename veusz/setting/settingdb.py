@@ -201,7 +201,10 @@ settingdb = _SettingDB()
 
 # a normal dict for non-persistent settings
 # (e.g. disable safe mode)
-transient_settings = {}
+transient_settings = {
+    # disable safety checks on evaluated code
+    'unsafe_mode': True,
+}
 
 def updateUILocale():
     """Update locale to one given in preferences."""
