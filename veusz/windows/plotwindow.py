@@ -862,7 +862,7 @@ class PlotWindow( qt4.QGraphicsView ):
         elif event.modifiers() & qt4.Qt.ShiftModifier:
             # scroll horizontally if shift is held down
             d = event.pixelDelta()
-            if d.x() == 0 and d.y() == 0:
+            if d.isNull():
                 # Fallback to angleDelta which should always be returned
                 d = event.angleDelta()
             delta = d.x() if d.x() != 0 else d.y()
