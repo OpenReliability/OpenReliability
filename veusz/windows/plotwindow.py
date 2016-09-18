@@ -861,7 +861,10 @@ class PlotWindow( qt4.QGraphicsView ):
                 self.sumwheeldelta -= 120
         elif event.modifiers() & qt4.Qt.ShiftModifier:
             # scroll horizontally if shift is held down
-            d = event.angleDelta()
+            d = event.pixelDelta()
+            if d.x() == 0 and d.y() == 0:
+                # Fallback to angleDelta which should always be returned
+                d = event.angleDelta()
             delta = d.x() if d.x() != 0 else d.y()
             scrollx = self.horizontalScrollBar()
             scrollx.setValue(scrollx.value() + delta)
