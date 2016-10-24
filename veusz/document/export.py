@@ -258,7 +258,7 @@ class Export(object):
 
         # write image to disk
         writer = qt4.QImageWriter()
-        writer.setFormat(qt4.QByteArray(format))
+        writer.setFormat(qt4.QByteArray().append(format))
         writer.setFileName(self.filename)
 
         # enable LZW compression for TIFFs
