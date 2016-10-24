@@ -43,10 +43,10 @@ bitmapformats = set(('png', 'bmp', 'jpg', 'tiff', 'xpm'))
 # map formats to names of radio buttons
 formatradio = (
     ('pdf', 'radioFormatPDF'),
-    ('eps', 'radioFormatEPS'),
-    ('ps',  'radioFormatPS' ),
+    #('eps', 'radioFormatEPS'),
+    #('ps',  'radioFormatPS' ),
     ('svg', 'radioFormatSVG'),
-    ('emf', 'radioFormatEMF'),
+    #('emf', 'radioFormatEMF'),
     ('png', 'radioFormatPNG'),
     ('bmp', 'radioFormatBMP'),
     ('jpg', 'radioFormatJPG'),

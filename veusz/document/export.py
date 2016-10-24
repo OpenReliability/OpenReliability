@@ -129,9 +129,9 @@ class Export(object):
 
     formats = [
         (["bmp"], _("Windows bitmap")),
-        (["emf"], _("Windows Enhanced Metafile")),
-        (["eps"], _("Encapsulated Postscript")),
-        (["ps"], _("Postscript")),
+        #(["emf"], _("Windows Enhanced Metafile")),
+        #(["eps"], _("Encapsulated Postscript")),
+        #(["ps"], _("Postscript")),
         (["jpg"], _("Jpeg bitmap")),
         (["pdf"], _("Portable Document Format")),
         #(["pic"], _("QT Pic format")),
