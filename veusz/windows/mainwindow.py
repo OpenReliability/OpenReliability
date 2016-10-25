@@ -866,8 +866,32 @@ class MainWindow(qt4.QMainWindow):
         setdb.writeSettings()
 
         # unload OpenReliability fonts
-        db = qt4.QFontDatabase
-        db.removeAllApplicationFonts()
+        # Code for windows
+        # Count remaining OpenReliability windows
+        # If count = 1, fonts are unloaded
+        if sys.platform.startswith('win32'):
+            import ctypes
+
+            EnumWindows = ctypes.windll.user32.EnumWindows
+            EnumWindowsProc = ctypes.WINFUNCTYPE(ctypes.c_bool, ctypes.POINTER(ctypes.c_int), ctypes.POINTER(ctypes.c_int))
+            GetWindowText = ctypes.windll.user32.GetWindowTextW
+            GetWindowTextLength = ctypes.windll.user32.GetWindowTextLengthW
+            IsWindowVisible = ctypes.windll.user32.IsWindowVisible
+
+            titles = []
+            def foreach_window(hwnd, lParam):
+                if IsWindowVisible(hwnd):
+                    length = GetWindowTextLength(hwnd)
+                    buff = ctypes.create_unicode_buffer(length + 1)
+                    GetWindowText(hwnd, buff, length + 1)
+                    if re.search(' OpenReliability', buff.value) :
+                        titles.append(buff.value)
+                    return True
+            EnumWindows(EnumWindowsProc(foreach_window), 0)
+
+            if len(titles) == 1:
+                db = qt4.QFontDatabase
+                db.removeAllApplicationFonts()
 
         event.accept()
 
