@@ -41,9 +41,9 @@ from ..compat import crange, citems, cvalues, cstr, cexec, CStringIO, cexecfile
 from .. import qtall as qt4
 
 from . import widgetfactory
-from . import datasets
 from . import painthelper
 
+from .. import datasets
 from .. import utils
 from .. import setting
 from ..openreliability import cst
@@ -91,7 +91,7 @@ class DocSuspend(object):
     def __exit__(self, type, value, traceback):
         self.doc.enableUpdates()
 
-class Document( qt4.QObject ):
+class Document(qt4.QObject):
     """Document class for holding the graph data.
     """
 
@@ -313,6 +313,7 @@ class Document( qt4.QObject ):
         """Set data to val, with symmetric or negative and positive errors."""
         self.data[name] = dataset
         dataset.document = self
+        dataset.username = name
 
         # update the change tracking
         self.setModified()
@@ -372,26 +373,18 @@ class Document( qt4.QObject ):
                 return name
         raise ValueError("Cannot find dataset")
 
-    def deleteDataset(self, name):
-        """Remove the selected dataset."""
-        del self.data[name]
-        self.setModified()
-
     def renameDataset(self, oldname, newname):
         """Rename the dataset."""
         d = self.data[oldname]
         del self.data[oldname]
         self.data[newname] = d
+        d.username = newname
 
         self.setModified()
 
     def getData(self, name):
         """Get data with name"""
         return self.data[name]
-
-    def hasData(self, name):
-        """Whether dataset is defined."""
-        return name in self.data
 
     def setModified(self, ismodified=True):
         """Set the modified flag on the data, and inform views."""

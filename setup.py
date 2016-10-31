@@ -34,19 +34,19 @@ try:
     import setuptools
     from setuptools import setup, Extension
     from setuptools.command.install import install as orig_install
-    
+
     extraoptions['install_requires'] = ['numpy']
     extraoptions['extras_require'] = {
         "optional": ['astropy', 'pyemf', 'sampy', 'pyMinuit', 'h5py']
     }
-    
+
     extraoptions['entry_points'] = {
         'gui_scripts' : [
             'veusz = veusz.veusz_main:run',
             'veusz_listen = veusz.veusz_listen:run'
             ]
         }
-  
+
 except ImportError:
     import distutils
     from distutils.core import setup, Extension
@@ -54,7 +54,7 @@ except ImportError:
 
     extraoptions['requires'] = ['numpy']
     extraoptions['scripts'] =  ['scripts/veusz', 'scripts/veusz_listen']
-    
+
 from distutils.command.install_data import install_data
 import pyqtdistutils
 
@@ -81,7 +81,7 @@ class install(orig_install):
 #  data installer with improved intelligence over distutils
 #  data files are copied into the project directory instead
 #  of willy-nilly
-class smart_install_data(install_data):   
+class smart_install_data(install_data):
     def run(self):
         install_cmd = self.get_finalized_command('install')
         if install_cmd.veusz_resource_dir:
@@ -113,7 +113,7 @@ def findData(dirname, extns):
     files.sort()
     return (dirname, files)
 
-    
+
 if sys.platform == 'darwin':
     try:
         import py2app
@@ -128,7 +128,7 @@ if sys.platform == 'darwin':
                     'CFBundleTypeRole': 'Editor',
                     }]
             }
-        
+
         extraoptions = {
             'setup_requires': ['py2app'],
             'app': ['veusz/veusz_main.py'],
@@ -145,7 +145,7 @@ if sys.platform == 'darwin':
                                     }
                          }
         }
-        
+
     # let's hope setuptools/distutils will do the right thing
     except ImportError:
         pass
@@ -176,6 +176,7 @@ setup(name = 'veusz',
                      ],
       packages = [ 'veusz',
                    'veusz.dataimport',
+                   'veusz.datasets',
                    'veusz.dialogs',
                    'veusz.document',
                    'veusz.helpers',
@@ -225,7 +226,7 @@ setup(name = 'veusz',
                                 numpy.get_include()],
                   ),
         ],
-                                
+
       cmdclass = {'build_ext': pyqtdistutils.build_ext,
                   'install_data': smart_install_data,
                   'install': install},

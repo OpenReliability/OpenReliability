@@ -152,7 +152,7 @@ def ImportFileCSV(comm, filename,
 
     params = ImportParamsCSV(
         filename=realfilename, readrows=readrows,
-        delimiter=delimiter, skipwhitespace=skipwhitespace, 
+        delimiter=delimiter, skipwhitespace=skipwhitespace,
         textdelimiter=textdelimiter,
         encoding=encoding,
         headerignore=headerignore, rowsignore=rowsignore,
