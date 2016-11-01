@@ -29,6 +29,7 @@ from .. import setting
 from .. import utils
 from .. import datasets
 from .. import qtall as qt
+from ..openreliability import cst
 
 # python identifier
 identifier_re = re.compile(r'^[A-Za-z_][A-Za-z0-9_]*$')
@@ -91,13 +92,16 @@ class Evaluate:
         c = self.context
         c.clear()
 
-        # add numpy things
+        # add numpy and OpenReliability things
         # we try to avoid various bits and pieces for safety
-        for name, val in citems(N.__dict__):
-            if ( (callable(val) or type(val)==float) and
+        # we add OpenReliability things first to avoid overwritting numpy stuff
+        listModules = [cst, N]
+        for module in listModules:
+            for name, val in citems(module.__dict__):
+                if ( (callable(val) or type(val)==float) and
                  name not in __builtins__ and
                  name[:1] != '_' and name[-1:] != '_' ):
-                c[name] = val
+                    c[name] = val
 
         # safe functions
         c['os_path_join'] = os.path.join
