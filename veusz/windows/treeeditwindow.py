@@ -1402,21 +1402,29 @@ class SettingLabel(qt4.QWidget):
         name = widget.name
 
         popup = qt4.QMenu(self)
-        popup.addAction(_('Reset to default'),
-                        self.actionResetDefault)
+        popup.addAction(
+            _('Reset to default'),
+            self.actionResetDefault)
 
-        copyto = popup.addMenu(_('Copy to'))
-        copyto.addAction(_("all '%s' widgets") % wtype,
-                         self.actionCopyTypedWidgets)
-        copyto.addAction(_("'%s' siblings") % wtype,
-                         self.actionCopyTypedSiblings)
-        copyto.addAction(_("'%s' widgets called '%s'") % (wtype, name),
-                         self.actionCopyTypedNamedWidgets)
-        copyto.addSeparator()
-        self.addCopyToWidgets(copyto)
+        if self.setting.path[:12] != '/StyleSheet/':
+            # settings not relevant for style sheet items
 
-        popup.addAction(_('Use as default style'),
-                        self.actionSetStyleSheet)
+            copyto = popup.addMenu(_('Copy to'))
+            copyto.addAction(
+                _("all '%s' widgets") % wtype,
+                self.actionCopyTypedWidgets)
+            copyto.addAction(
+                _("'%s' siblings") % wtype,
+                self.actionCopyTypedSiblings)
+            copyto.addAction(
+                _("'%s' widgets called '%s'") % (wtype, name),
+                self.actionCopyTypedNamedWidgets)
+            copyto.addSeparator()
+            self.addCopyToWidgets(copyto)
+
+            popup.addAction(
+                _('Use as default style'),
+                self.actionSetStyleSheet)
 
         # special actions for references
         if self.setting.isReference():
